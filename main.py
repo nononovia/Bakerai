@@ -12,4 +12,3 @@ if __name__ == "__main__"
             termination  = False
         else: # Send response to user
             print("E\n")
-        #save that reserved value to a constant outside of the "main" method
