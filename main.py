@@ -5,11 +5,11 @@ print("Hello! This is the chatbot. I am here to boost your mental wellbeing! Let
 END_CONVO = "0"
 
 if __name__ == "__main__"
-    i = True
-    while i == True:
+    termination = True
+    while termination  == True:
         reading = input()
         if reading == END_CONVO:
-            i = False
+            termination  = False
         else: # Send response to user
             print("E\n")
-
+        #save that reserved value to a constant outside of the "main" method
