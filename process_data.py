@@ -6,6 +6,10 @@ import json
 import tensorflow
 import random
 
+# Watch https://www.youtube.com/watch?v=wypVcNIH6D4
+# and https://www.youtube.com/watch?v=ON5pGUJDNow to understand
+# Minor changes have been made but core structure is very similar
+
 # Load json
 with open("intents.json") as jsonFile:
     data = json.load(jsonFile)
@@ -39,8 +43,6 @@ convoLabels = convoLabels.sort()
 training = []
 output = []
 
-out_empty = [0]*len(convoLabels)
-
 # Idea: take each sentence, turn it into a list of word occurances, with a list of all possible words we are looking at
 for i, doc in enumerate(docs_x):
     bag = []
@@ -52,7 +54,9 @@ for i, doc in enumerate(docs_x):
             bag.append(1)
         else:
             bag.append(0)
-    output_row = out_empty[:]
+    # Create our "output": which of the patterns we identify this input with. 
+    output_row = [0]*len(convoLabels)
+    # The corresponding label to this output = 1. All others are o
     output_row = [labels.index(docs_patter[i])] = 1
 
     training.append(bag)
