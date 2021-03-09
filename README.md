@@ -1,6 +1,17 @@
 # Bakerai
 
-## Requirement Definition
+## Bakerai is a chat bot for our online bakery store. Bakerai acts as your online assistant to make the shopping experience effortless.
+
+## Functions
+- Customer service and support.
+- Provide information about products and services to the customer.
+
+## Implementation
+
+Bakerai uses advanced Natural Langugage Processing Techniques and Machine Learning Models to tailor responses specially to your needs.
+
+
+## Requirements Definition
 
 The ChatBot Bakerai should be able to answer basic day to day questions about the bakery and should keep customers entertained while they are waiting for their purchases??.
 The ChatBot should be setted as an online assistant, to give customer information about the bakery before they come, so they can decide whether or not they want to visit.
@@ -18,7 +29,7 @@ What specific items cost?
 
 Potential allergies?
 
-# sample output idea
+##  Sample Output Ideas.
 
 - greetings
   - hi
@@ -35,18 +46,6 @@ Potential allergies?
 - ask to buy a cupcake for taste test haha
 - tell me a joke
 - Have a good day
-- # bye
-
-# Hey, this is Bakerai. Bakerai is a chat-bot created by our team as a project for COSC-310 (Intro to software engineering).
-
-# Bakerai is a chat bot for our online bakery store. Bakerai acts as your online assistant to make the shopping experience effortless.
-
-# Bakerai's function are not limited to but include:
-
-## 1. Customer service and support.
-
-## 2. Provide information about products and services to the customer.
-
-# It uses advanced Natural Langugage Processing Techniques and Machine Learning Models to tailor responses specially to your needs.
-
 ### This is the official repository hosting the code which powers Bakerai. Feel free to take a look!
+
+# bye - made with ♥ for COSC 310 [Intro to Software Eng.]
