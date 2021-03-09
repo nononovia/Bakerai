@@ -13,6 +13,23 @@ from process_data import training, output
 # tensorflow.reset_default_graph()
 # this line does not work
 
+#convert input sentence to bag of words so the model can understand it. 
+def convert_input_to_bow(s, wrds): 
+    bow = [0 for _ in range(len(wrds))]
+    s_wrds = nltk.word_tokenize(s)
+    s_wrds = [stemmer.stem(wrd.lower()) for wrd in s_wrds]
+
+    for x in s_wrds: 
+        for i, j in enumerate(wrds): 
+            if j == x: 
+                bow[i] = 1
+    
+    return numpy.array(bow)
+
+
+
+    
+
 
 nerual_net = tflearn.input_data(shape=[None, len(training[0])])
 # this create input data for the RNN 
@@ -38,3 +55,4 @@ except:
     # we pass in 8 batch at a time
 
     model.save("model.tflearn")
+

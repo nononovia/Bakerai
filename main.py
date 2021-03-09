@@ -5,23 +5,41 @@ import tflearn
 import json
 import tensorflow
 import random
-from NN import model # these are the model and function for chatting
+from process_data import training, output, allWords, convoLabels, data
+from NN import convert_input_to_bow
+from NN import model 
+
+# these are the model and function for chatting
 # from process_data import ..... (you can load functions, varibles....)
 
 #Write a message introducing the chatbot, and print the message to the console
-print("Hello! This is the chatbot. I am here to boost your mental wellbeing! Let's chat:", flush = True)
 #Write a loop to repeatedly prompt the user for input, and store that input in a variable. (variable as a function input later)
 #terminate the loop after the user inputs a reserved value of your choosing
-END_CONVO = "0"
+
+
+#start chat - 'quit' to quit. 
+
+def start(): 
+    print("Hello! This is the chatbot. I am here to boost your mental wellbeing! (type 'quit' to quit.) Let's chat:", flush = True)
+    while True: 
+        reading = input()
+        if reading.strip().lower() == "quit": 
+            break 
+        #get the prediction matrix with the probabilities of correct responses.
+        output = model.predict([convert_input_to_bow(reading, allWords )])
+        #get the prediction with max probability.
+        output_i = numpy.argmax(output)
+
+        #extract the correct response from intents.json.
+        cor_label = convoLabels[output_i]
+        for label in data['intents']: 
+            if label['tag'] == cor_label: 
+                cor_responses = label['responses']
+
+        #Just print a random response. 
+        print(random.choice(cor_responses))
 
 if __name__ == "__main__":
-    termination = True
-    while termination  == True:
-        reading = input()
-        if reading == END_CONVO:
-            termination  = False
-        else: # Send response to user
-            print("E\n")
+    start()
 
-def lemmatize(s):
-    print("suh")
+    
