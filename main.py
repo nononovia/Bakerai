@@ -5,7 +5,7 @@ import tflearn
 import json
 import tensorflow
 import random
-from NN import model, bag_of_words # these are the model and function for chatting
+from NN import model # these are the model and function for chatting
 
 #Write a message introducing the chatbot, and print the message to the console
 print("Hello! This is the chatbot. I am here to boost your mental wellbeing! Let's chat:", flush = True)
