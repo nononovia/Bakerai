@@ -1,5 +1,7 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
+stemmer = LancasterStemmer()
+nltk.download('punkt')
 import numpy
 import tflearn
 import json
@@ -30,13 +32,13 @@ for intent in data["intents"]: # For each "type" of conversation
         allWords.extend(tempWrds) # Append all words at once
         
         # Store practice inputs and their classifications
-        docs.append(tempWrds)
+        docs_x.append(tempWrds)
         docs_pattern.append(intent["tag"])
 # Turn all words to lowercase
 allWords = [stemmer.stem(w.lower()) for w in allWords if w != "?"]
 
 # Remove all duplicates, and sort words (for easier use)
-allWords = sorted(list(set(words)))
+allWords = sorted(list(set(allWords)))
 
 convoLabels = sorted(convoLabels)
 
@@ -57,7 +59,7 @@ for i, doc in enumerate(docs_x):
     # Create our "output": which of the patterns we identify this input with. 
     output_row = [0]*len(convoLabels)
     # The corresponding label to this output = 1. All others are o
-    output_row [labels.index(docs_patter[i])] = 1
+    output_row [convoLabels.index(docs_patter[i])] = 1
 
     training.append(bag)
     output.append(output_row)
