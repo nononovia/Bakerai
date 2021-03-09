@@ -2,7 +2,7 @@ import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 nltk.download('punkt')
-import numpy
+import numpy as np
 import tflearn
 import json
 import tensorflow
@@ -59,12 +59,11 @@ for i, doc in enumerate(docs_x):
     # Create our "output": which of the patterns we identify this input with. 
     output_row = [0]*len(convoLabels)
     # The corresponding label to this output = 1. All others are o
-    output_row [convoLabels.index(docs_patter[i])] = 1
+    output_row [convoLabels.index(docs_pattern[i])] = 1
 
     training.append(bag)
     output.append(output_row)
 # Turn data to numpy arrays
-training = numpy.array(training)
+training = np.array(training)
 output = np.array(output)
 
-print(training)

@@ -8,7 +8,8 @@ import random
 from process_data import training, output
 
 
-tensorflow.reset_default_graph()
+# tensorflow.reset_default_graph()
+# this line does not work
 
 
 nerual_net = tflearn.input_data(shape=[None, len(training[0])])
