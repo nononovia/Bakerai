@@ -30,15 +30,15 @@ for intent in data["intents"]: # For each "type" of conversation
         allWords.extend(tempWrds) # Append all words at once
         
         # Store practice inputs and their classifications
-        docs.append(pattern)
+        docs.append(tempWrds)
         docs_pattern.append(intent["tag"])
 # Turn all words to lowercase
-allWords = [stemmer.stem(w.lower()) for w in allWords]
+allWords = [stemmer.stem(w.lower()) for w in allWords if w != "?"]
 
 # Remove all duplicates, and sort words (for easier use)
 allWords = sorted(list(set(words)))
 
-convoLabels = convoLabels.sort()
+convoLabels = sorted(convoLabels)
 
 training = []
 output = []
