@@ -37,7 +37,7 @@ def start():
                 cor_responses = label['responses']
 
         #Just print a random response. 
-        print(random.choice(cor_responses))
+        print(f'bot: {random.choice(cor_responses)}')
 
 if __name__ == "__main__":
     start()

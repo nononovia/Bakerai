@@ -10,7 +10,7 @@
          "context_set": ""
         },
         {"tag": "about",
-         "patterns": ["Tell me about yourself", "What is Bakerai", "Who are you", "I'm confused"],
+         "patterns": ["Tell me about yourself", "What is Bakerai", "Who are you", "I'm confused", "what do you do", "what is your role", "how can you help me", "info", "what can you do"],
          "responses": ["I am a virtual assistant for the Bakery - (Bakery Name)", "I can tell you everything about (Bakery Name)"],
          "context_set": ""
         },
@@ -40,12 +40,12 @@
          "context_set": ""
         },
         {"tag": "drink",
-         "patterns": ["what drinks do you have", "Do you have anything to drink", "Do you have coffee","Can I have a cup of coffee with it","how much does coffee cost","I want coffee","I want something to drink","Do you still have coffee"],
+         "patterns": ["what drinks do you have", "Do you have anything to drink", "Do you have coffee","Can I have a cup of coffee with it","how much does coffee cost","I want coffee","I want something to drink","Do you still have coffee", "how about drinks"],
          "responses": ["We offer coffee with our baked goods, its $3 a cup!"],
          "context_set": ""
         },
         {"tag": "location",
-         "patterns": ["where is (Bakery Name)", "how can I get to (Bakery Name)", "What is the address for (Bakery Name)", ""],
+         "patterns": ["where is (Bakery Name)", "how can I get to (Bakery Name)", "What is the address for (Bakery Name)", "where are you", "where is the shop"],
          "responses": ["We are at 221B Baker Street. :)"],
          "context_set": ""
         },
@@ -55,7 +55,7 @@
          "context_set": ""
         },
         {"tag": "allergy",
-         "patterns": ["Does the baked goods contain peanuts", "I am allergic to peanuts","make sure nothing contains peanut, I am allergic","I am allergic to diary products","Does anything contain diary? I am lactose intolerant"],
+         "patterns": ["Does the baked goods contain peanuts", "I am allergic to peanuts","make sure nothing contains peanut, I am allergic","I am allergic to diary products","Does anything contain diary? I am lactose intolerant", "i am allergic"],
          "responses": ["Non of our product contain any nuts, yet all of our product contain or was made with products that contain diary products."],
          "context_set": ""
         },
