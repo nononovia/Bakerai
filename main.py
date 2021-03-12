@@ -20,6 +20,8 @@ from NN import model
 #start chat - 'quit' to quit. 
 
 def start(): 
+    print("\n\n\n\n\n")
+    
     print("Hello! This is the chatbot. I am here to tell you about the bakery Sakura! (type 'quit' to quit.) Let's chat:", flush = True)
     while True: 
         reading = input()
