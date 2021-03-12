@@ -6,7 +6,7 @@
         },
         {"tag": "goodbye",
          "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day","Bye","Thank you, bye"],
-         "responses": ["Thank you for using Bakerai <3","Have a sweet day! <3", "Bye~", "Goodbye! <3","Have a good day! （<ゝω・）☆", "Thanks for coming <3", "Have a good one!（<ゝω・）☆"],
+         "responses": ["Thank you for using Bakerai <3","Have a sweet day! <3", "Bye~", "Goodbye! <3","Have a good day!", "Thanks for coming <3", "Have a good one!"],
          "context_set": ""
         },
         {"tag": "about",
@@ -46,7 +46,7 @@
         },
         {"tag": "location",
          "patterns": ["where is (Sakura)", "how can I get to (Sakura)", "What is the address for (Sakura)", "where are you", "where is the shop"],
-         "responses": ["We are at 221B Baker Street accross Lake Regional Park:)"],
+         "responses": ["We are at 221B Baker Street accross Lake Regional Park :)"],
          "context_set": ""
         },
         {"tag": "customize",
