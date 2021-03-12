@@ -5,7 +5,7 @@
 ## How to run
 
 step_0: clone the repo.  
-step_1: ensure you have Python 3.8.4+.  
+step_1: ensure you have Python 3.6+.  
 step_2: pip install all the required libraries.  
 step_3: Just run `main.py`. (the model is already uploaded so there will be no training necessary. To see how the model was trained, check `NN.py` and `process_data.py`)  
 step_4: after running `main.py`, there will be a few tensorflow warnings followed by
