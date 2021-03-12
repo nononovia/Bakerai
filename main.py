@@ -2,7 +2,7 @@ import numpy
 import random
 from process_data import  allWords, convoLabels, data
 from NN import convert_input_to_bow
-from NN import model 
+from NN import model
 
 # these are the model and function for chatting
 # from process_data import ..... (you can load functions, varibles....)
@@ -12,14 +12,15 @@ from NN import model
 #terminate the loop after the user inputs a reserved value of your choosing
 
 
-#start chat - 'quit' to quit. 
+#start chat - 'quit' to quit.
 
-def start(): 
-    print("Hello! This is the chatbot. I am here to make your shopping experience at Sakura effortless! (type 'quit' to quit.) Let's chat:", flush = True)
-    while True: 
+def start():
+    print("\n\n\n\n\n")
+    print("Hello! This is the chatbot. I am here to tell you about the bakery Sakura! (type 'quit' to quit.) Let's chat:", flush = True)
+    while True:
         reading = input()
-        if reading.strip().lower() == "quit": 
-            break 
+        if reading.strip().lower() == "quit":
+            break
         #get the prediction matrix with the probabilities of correct responses.
         output = model.predict([convert_input_to_bow(reading, allWords )])
         #get the prediction with max probability.
@@ -27,14 +28,13 @@ def start():
 
         #extract the correct response from intents.json.
         cor_label = convoLabels[output_i]
-        for label in data['intents']: 
-            if label['tag'] == cor_label: 
+        for label in data['intents']:
+            if label['tag'] == cor_label:
                 cor_responses = label['responses']
 
-        #Just print a random response. 
+        #Just print a random response.
         print(f'bot: {random.choice(cor_responses)}')
+        print(" ")
 
 if __name__ == "__main__":
     start()
-
-    
