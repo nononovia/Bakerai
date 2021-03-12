@@ -1,22 +1,22 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up", "hey"],
-         "responses": ["Hello! :)", "Happy to speak with you! :)", "Hi there, how can I help? :)","What can I help you with? :)"],
+         "responses": ["Hello! :)", "Happy to speak with you! :)", "Hi there, how can I help? :)","What can I help you with? :)","What can I do for you today? :)"],
          "context_set": ""
         },
         {"tag": "goodbye",
          "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day","Bye","Thank you, bye"],
-         "responses": ["Thank you for using Bakerai <3","Have a sweet day! <3", "Bye~", "Goodbye! <3"],
+         "responses": ["Thank you for using Bakerai <3","Have a sweet day! <3", "Bye~", "Goodbye! <3","Have a good day!", "Thanks for coming <3", "Have a good one!"],
          "context_set": ""
         },
         {"tag": "about",
          "patterns": ["Tell me about yourself", "What is Bakerai", "Who are you", "I'm confused", "what do you do", "what is your role", "how can you help me", "info", "what can you do"],
-         "responses": ["I am a virtual assistant for the Bakery - (Bakery Name)", "I can tell you everything about (Bakery Name)"],
+         "responses": ["I am a virtual assistant for the Bakery - (Sakura)", "I can tell you everything about (Sakura)"],
          "context_set": ""
         },
         {"tag": "name",
          "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["I am Bakerai", "My name is Bakerai", "I'm an AI for (Bakery Name), BakerAi"],
+         "responses": ["I am Bakerai", "My name is Bakerai", "I'm an AI for (Sakura), BakerAi"],
          "context_set": ""
         },
         {"tag": "shop",
@@ -26,7 +26,7 @@
         },
         {"tag": "hours",
          "patterns": ["when are you guys open", "what are your hours", "hours of operation"],
-         "responses": ["We are open 7am-4pm Monday-Friday!"],
+         "responses": ["We are open 7am-4pm Monday-Friday! Closed on all holidays."],
          "context_set": ""
         },
         {"tag": "cookies",
@@ -36,7 +36,7 @@
         },
         {"tag": "cupcakes",
          "patterns": ["what cupcakes do you have", "Do you have chocolate cupcakes", "Do you have vanilla cupcakes","Can I have a cupcake","how much does cupcakes cost","I want cupcakes","Do you still have cupcakes"],
-         "responses": ["We have chocolate cupcakes and vanilla cupcakes, both are $4 each!"],
+         "responses": ["We have chocolate cupcakes and vanilla cupcakes, both are $4 each! $4.5 for both strawberry cupcakes and Matcha cupcakes :)"],
          "context_set": ""
         },
         {"tag": "drink",
@@ -45,8 +45,8 @@
          "context_set": ""
         },
         {"tag": "location",
-         "patterns": ["where is (Bakery Name)", "how can I get to (Bakery Name)", "What is the address for (Bakery Name)", "where are you", "where is the shop"],
-         "responses": ["We are at 221B Baker Street. :)"],
+         "patterns": ["where is (Sakura)", "how can I get to (Sakura)", "What is the address for (Sakura)", "where are you", "where is the shop"],
+         "responses": ["We are at 221B Baker Street accross Lake Regional Park :)"],
          "context_set": ""
         },
         {"tag": "customize",

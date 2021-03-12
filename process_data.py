@@ -3,10 +3,7 @@ from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 nltk.download('punkt')
 import numpy as np
-import tflearn
 import json
-import tensorflow
-import random
 import pickle
 import pathlib
 
