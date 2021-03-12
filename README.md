@@ -1,6 +1,6 @@
 # Bakerai
 
-## Bakerai is a chat bot for our online bakery store. Bakerai acts as your online assistant to make the shopping experience effortless.
+## Bakerai is an online chatbot for a imaginary bakery - SAKURA. Bakerai acts as your online assistant to provide customer information they need about SAKURA without leaving the comfort of their home.
 
 ## Functions
 - Customer service and support.
