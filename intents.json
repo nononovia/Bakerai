@@ -11,12 +11,12 @@
         },
         {"tag": "about",
          "patterns": ["Tell me about yourself", "What is Bakerai", "Who are you", "I'm confused", "what do you do", "what is your role", "how can you help me", "info", "what can you do"],
-         "responses": ["I am a virtual assistant for the Bakery - (Sakura)", "I can tell you everything about (Sakura)"],
+         "responses": ["I am a virtual assistant for the Bakery - Sakura", "I can tell you everything about Sakura"],
          "context_set": ""
         },
         {"tag": "name",
          "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["I am Bakerai", "My name is Bakerai", "I'm an AI for (Sakura), BakerAi"],
+         "responses": ["I am Bakerai", "My name is Bakerai", "I'm an AI for Sakura, BakerAi"],
          "context_set": ""
         },
         {"tag": "shop",
@@ -45,7 +45,7 @@
          "context_set": ""
         },
         {"tag": "location",
-         "patterns": ["where is (Sakura)", "how can I get to (Sakura)", "What is the address for (Sakura)", "where are you", "where is the shop"],
+         "patterns": ["where is Sakura", "how can I get to Sakura", "What is the address for Sakura", "where are you", "where is the shop"],
          "responses": ["We are at 221B Baker Street accross Lake Regional Park :)"],
          "context_set": ""
         },
