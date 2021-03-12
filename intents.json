@@ -80,7 +80,7 @@
         "context": ""
         },
         {"tag": "cake",
-        "patterns": ["what cake do you have", "Do you have chocolate cake", "I want cake","Can I have a cake","how much does cake cost","What cakes do you sell","Do you still have cake"],
+        "patterns": ["Can I have some cake","what cake do you have", "Do you have chocolate cake", "I want cake","Can I have a cake","how much does cake cost","What cakes do you sell","Do you still have cake"],
         "responses": ["We have cake, mostly ranging in price from 20-30$. For more information, visit our website BakeSakura.com"],
         "context_set": ""
         },
@@ -89,13 +89,8 @@
         "responses": ["We do customized catering. For more information, visit our website BakeSakura.com"],
         "context_set": ""
         },
-        {"tag": "catering",
-        "patterns": ["Do you do catering?", "I want something custom", "Can you make me something special?","I want something special","Can you customize for me?"],
-        "responses": ["We do customized catering. For more information, visit our website BakeSakura.com"],
-        "context_set": ""
-        },
         {"tag": "bread",
-        "patterns": ["what bread do you have", "Do you have bread", "I want bread","Can I have bread","how much does bread cost","What bread do you sell","Do you still have bread"],
+        "patterns": ["Can I have some bread","what bread do you have", "Do you have bread", "I want bread","Can I have bread","how much does bread cost","What bread do you sell","Do you still have bread"],
         "responses": ["We have lots of bread, such as white, wholewheat, or sourdough bread. For more information, visit our website BakeSakura.com"],
         "context_set": ""
         }     
