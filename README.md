@@ -72,7 +72,7 @@ What specific items cost?
 
 Potential allergies?
 
-## Sample Output Ideas.
+## Sample Input Ideas.
 
 - greetings
   - hi
@@ -92,4 +92,6 @@ Potential allergies?
 
 ### This is the official repository hosting the code which powers Bakerai. Feel free to take a look!
 
-# bye - made with ♥ for COSC 310 [Intro to Software Eng.]
+# bye - made with ♥ for COSC 310 [Software Engineering] 
+### -Team 27: Elias Pinno, Kanishka Verma, Lydia Lin, Rick Feng, Novia Fan
+
