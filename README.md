@@ -54,6 +54,10 @@ some libraries which were used:
 
 - numpy, ntlk, tensorflow, tflearn, pickle
 
+The software architecuture diagram is shown as follows:
+
+![](image/SoftwareArchitecture.png)
+
 ## Requirements Definition
 
 The ChatBot Bakerai should be able to answer basic day to day questions about the bakery and should keep customers entertained while they are waiting for their purchases??.
@@ -75,9 +79,6 @@ Potential allergies?
 ## Sample Input Ideas.
 
 - greetings
-  - hi
-  - who are you
-  - name
 - ask about location
 - ask about time
 - ask about menu
@@ -85,10 +86,9 @@ Potential allergies?
 - ask about gluten free
 - ask to buy cookie
 - ask to buy coffee with cookie
-- mention coming up wedding/event and ask about customize cake
+- ask about customize cake
 - ask to buy a cupcake for taste test haha
-- tell me a joke
-- Have a good day
+- Ask to tell a joke
 
 ### This is the official repository hosting the code which powers Bakerai. Feel free to take a look!
 
