@@ -20,7 +20,7 @@ from NN import model
 #start chat - 'quit' to quit. 
 
 def start(): 
-    print("Hello! This is the chatbot.I am here to make your shopping experience at Sakura effortless!(type 'quit' to quit.) Let's chat:", flush = True)
+    print("Hello! This is the chatbot. I am here to make your shopping experience at Sakura effortless! (type 'quit' to quit.) Let's chat:", flush = True)
     while True: 
         reading = input()
         if reading.strip().lower() == "quit": 

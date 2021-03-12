@@ -9,7 +9,7 @@ step_1: ensure you have Python 3.8.4+.
 step_2: pip install all the required libraries.  
 step_3: Just run `main.py`. (the model is already uploaded so there will be no training necessary. To see how the model was trained, check `NN.py` and `process_data.py`)  
 step_4: after running `main.py`, there will be a few tensorflow warnings followed by
-"Hello! This is the chatbot.I am here to make your shopping experience at Sakura effortless!(type 'quit' to quit.) Let's chat:"  
+"Hello! This is the chatbot. I am here to make your shopping experience at Sakura effortless! (type 'quit' to quit.) Let's chat:"  
 This means the project is running and you can simply type the questions you have for the bot.
 
 ## Project Structure
