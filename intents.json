@@ -56,7 +56,7 @@
         },
         {"tag": "allergy",
          "patterns": ["Does the baked goods contain peanuts", "I am allergic to peanuts","make sure nothing contains peanut, I am allergic","I am allergic to diary products","Does anything contain diary? I am lactose intolerant", "i am allergic"],
-         "responses": ["Non of our product contain any nuts, yet all of our product contain or was made with products that contain diary products."],
+         "responses": ["None of our product contain any nuts, yet all of our product contain or was made with products that contain diary products."],
          "context_set": ""
         },
         {"tag": "gluten",
@@ -76,7 +76,7 @@
         }, 
         {"tag": "creator",
         "patterns": ["Who made you?", "Who created you?", "Who made BakerAI?"],
-        "responses": ["Our founder is secret. We have been open since 2015.", "We opened in 2015, thanks to our secret founder."],
+        "responses": ["I was made for a cosc 310 Project", "Elias, Lydia, Novia, Rick and Kanishka made me"],
         "context": ""
         },
         {"tag": "cake",
