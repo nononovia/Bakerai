@@ -1,11 +1,6 @@
-import nltk
-from nltk.stem.lancaster import LancasterStemmer
 import numpy
-import tflearn
-import json
-import tensorflow
 import random
-from process_data import training, output, allWords, convoLabels, data
+from process_data import  allWords, convoLabels, data
 from NN import convert_input_to_bow
 from NN import model 
 

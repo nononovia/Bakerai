@@ -4,9 +4,6 @@ stemmer = LancasterStemmer()
 nltk.download('punkt')
 import numpy
 import tflearn
-import json
-import tensorflow
-import random
 from process_data import training, output
 
 
