@@ -4,12 +4,14 @@
 
 ## Project Structure 
 
-bakerai has the following file structure: 
-  ---process_data.py
-  ---NN.py
-  ---main.py 
-  ---intents.json
- We have three files which all have one specific purpose as asked by the requirements. 
+bakerai has the following file structure:   
+
+  ---process_data.py  
+  ---NN.py  
+  ---main.py   
+  ---intents.json  
+
+ We have four files which all have one specific purpose as asked by the requirements. 
 
 
  ### `process_data.py` 
