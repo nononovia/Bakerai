@@ -73,7 +73,7 @@
         "patterns": ["How long have you been in operation?", "When did you start?", "How old is the bakery?"],
         "responses": ["Our founder is secret. We have been open since 2015.", "We opened in 2015, thanks to our secret founder."],
         "context": ""
-        }, 
+        },
         {"tag": "creator",
         "patterns": ["Who made you?", "Who created you?", "Who made BakerAI?"],
         "responses": ["I was made for a cosc 310 Project", "Elias, Lydia, Novia, Rick and Kanishka made me"],
@@ -93,6 +93,6 @@
         "patterns": ["Can I have some bread","what bread do you have", "Do you have bread", "I want bread","Can I have bread","how much does bread cost","What bread do you sell","Do you still have bread"],
         "responses": ["We have lots of bread, such as white, wholewheat, or sourdough bread. For more information, visit our website BakeSakura.com"],
         "context_set": ""
-        }     
+        }
 ]
 }
