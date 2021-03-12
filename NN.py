@@ -4,9 +4,6 @@ stemmer = LancasterStemmer()
 nltk.download('punkt')
 import numpy
 import tflearn
-import json
-import tensorflow
-import random
 from process_data import training, output
 
 
@@ -33,11 +30,10 @@ def convert_input_to_bow(s, wrds):
 
 nerual_net = tflearn.input_data(shape=[None, len(training[0])])
 # this create input data for the RNN 
-nerual_net = tflearn.fully_connected(nerual_net, 12)
+nerual_net = tflearn.fully_connected(nerual_net, 8)
 # first hidden layer with 8 neruon
-nerual_net = tflearn.fully_connected(nerual_net, 12)
+nerual_net = tflearn.fully_connected(nerual_net, 8)
 # second hidden layer with 8 neruon
-nerual_net = tflearn.fully_connected(nerual_net, 12)
 
 nerual_net = tflearn.fully_connected(nerual_net, len(output[0]), activation="softmax")
 # output layer and declare activiation function for this NN. In this case is softmax

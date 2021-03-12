@@ -11,17 +11,17 @@
         },
         {"tag": "about",
          "patterns": ["Tell me about yourself", "What is Bakerai", "Who are you", "I'm confused", "what do you do", "what is your role", "how can you help me", "info", "what can you do"],
-         "responses": ["I am a virtual assistant for the Bakery - (Sakura)", "I can tell you everything about (Sakura)"],
+         "responses": ["I am a virtual assistant for the Bakery - Sakura", "I can tell you everything about Sakura"],
          "context_set": ""
         },
         {"tag": "name",
          "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["I am Bakerai", "My name is Bakerai", "I'm an AI for (Sakura), BakerAi"],
+         "responses": ["I am Bakerai", "My name is Bakerai", "I'm an AI for Sakura, BakerAi"],
          "context_set": ""
         },
         {"tag": "shop",
          "patterns": ["Id like to buy something", "whats on the menu", "could i get something to eat","What baked goods do you have","What do you offer","what baked goods are offered"],
-         "responses": ["Here's our menu: \n Cookies: $2 \n Cupcakes: $4 \n Coffee: $3 \n We also offer customize cake for special events!"],
+         "responses": ["Here's our menu: \n Cookies: $2 \n Cupcakes: $4 \n Coffee: $3 \n Cake: Varying prices \n Bread: 3$ White, Wholewheat, Sour dough \n We also offer customize cake for special events!"],
          "context_set": ""
         },
         {"tag": "hours",
@@ -45,7 +45,7 @@
          "context_set": ""
         },
         {"tag": "location",
-         "patterns": ["where is (Sakura)", "how can I get to (Sakura)", "What is the address for (Sakura)", "where are you", "where is the shop"],
+         "patterns": ["where is Sakura", "how can I get to Sakura", "What is the address for Sakura", "where are you", "where is the shop"],
          "responses": ["We are at 221B Baker Street accross Lake Regional Park :)"],
          "context_set": ""
         },
@@ -56,7 +56,7 @@
         },
         {"tag": "allergy",
          "patterns": ["Does the baked goods contain peanuts", "I am allergic to peanuts","make sure nothing contains peanut, I am allergic","I am allergic to diary products","Does anything contain diary? I am lactose intolerant", "i am allergic"],
-         "responses": ["Non of our product contain any nuts, yet all of our product contain or was made with products that contain diary products."],
+         "responses": ["None of our product contain any nuts, yet all of our product contain or was made with products that contain diary products."],
          "context_set": ""
         },
         {"tag": "gluten",
@@ -68,6 +68,31 @@
          "patterns": ["Tell me a joke", "I'm bored","I'm waiting for my order and I'm really bored","tell me a joke while I'm waiting","say something funny"],
          "responses": ["I'm trying very hard to come up with a baking pun but we don't offer buns :(","one joke is all you knead XD"],
          "context_set": ""
+        },
+        {"tag": "history",
+        "patterns": ["How long have you been in operation?", "When did you start?", "How old is the bakery?"],
+        "responses": ["Our founder is secret. We have been open since 2015.", "We opened in 2015, thanks to our secret founder."],
+        "context": ""
+        },
+        {"tag": "creator",
+        "patterns": ["Who made you?", "Who created you?", "Who made BakerAI?"],
+        "responses": ["I was made for a cosc 310 Project", "Elias, Lydia, Novia, Rick and Kanishka made me"],
+        "context": ""
+        },
+        {"tag": "cake",
+        "patterns": ["Can I have some cake","what cake do you have", "Do you have chocolate cake", "I want cake","Can I have a cake","how much does cake cost","What cakes do you sell","Do you still have cake"],
+        "responses": ["We have cake, mostly ranging in price from 20-30$. For more information, visit our website BakeSakura.com"],
+        "context_set": ""
+        },
+        {"tag": "catering",
+        "patterns": ["Do you do catering?", "I want something custom", "Can you make me something special?","I want something special","Can you customize for me?"],
+        "responses": ["We do customized catering. For more information, visit our website BakeSakura.com"],
+        "context_set": ""
+        },
+        {"tag": "bread",
+        "patterns": ["Can I have some bread","what bread do you have", "Do you have bread", "I want bread","Can I have bread","how much does bread cost","What bread do you sell","Do you still have bread"],
+        "responses": ["We have lots of bread, such as white, wholewheat, or sourdough bread. For more information, visit our website BakeSakura.com"],
+        "context_set": ""
         }
 ]
 }
