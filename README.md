@@ -42,6 +42,9 @@ This is the data which the model is trained on. The model uses the 'tags' and 'p
 
 Bakerai uses advanced Natural Langugage Processing Techniques and Machine Learning Models to tailor responses specially to your needs.
 
+some libraries which were used:   
+
+- numpy, ntlk, tensorflow, tflearn, pickle 
 
 ## Requirements Definition
 
