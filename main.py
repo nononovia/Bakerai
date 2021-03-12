@@ -38,7 +38,7 @@ def start():
 
         #Just print a random response. 
         print(f'bot: {random.choice(cor_responses)}')
-        print("\n")
+        print(" ")
 
 if __name__ == "__main__":
     start()
