@@ -1,5 +1,4 @@
 # %%
-
 import os
 import json
 import gzip
@@ -14,14 +13,15 @@ from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
+import pickle
+
+pd.options.mode.chained_assignment = None
 # %%
-
-
+#import data
 def parse(path):
     g = gzip.open(path, 'rb')
     for l in g:
         yield json.loads(l)
-
 
 def getDF(path):
     i = 0
@@ -31,60 +31,61 @@ def getDF(path):
         i += 1
     return pd.DataFrame.from_dict(df, orient='index')
 
-
+#%%
+#subset dataframe to only relevant.
 df = getDF('./data/Grocery_and_Gourmet_Food_5.json.gz')
 
 dg = df[['overall', 'reviewText']]
 dg
 
+#clean data remove nulls.
 df.isnull().sum()
 dg.dropna(inplace=True)
 
-
-dg.loc[dg['overall'] > 3.0, 'sentiment'] = 1
-dg.loc[dg['overall'] < 3.0, 'sentiment'] = 0
+#assign each review with more than 3 stars as positive and the rest as negative.
+dg.loc[dg['overall'] >=   3.0, 'sentiment'] = 'POSITIVE'
+dg.loc[dg['overall'] < 3.0, 'sentiment'] = 'NEGATIVE' 
 dg.head()
 
+#more cleaning data and make everything lower case.  
 dg.dropna(axis=0, how='any', inplace=True)
 dg['reviewText'] = dg['reviewText'].map(lambda x: x.lower())
 
-
+#sample data such that both negative and positive reviews have equal propotion.
 g = dg.groupby('sentiment')
-dg = pd.DataFrame(g.apply(lambda x: x.sample(
-    g.size().min()).reset_index(drop=True)))
+dg = pd.DataFrame(g.apply(lambda x: x.sample(g.size().min()).reset_index(drop=True)))
 
 # %%
+# change the reviews to bow vectorizer.
 vectorizer = CountVectorizer()
 X = [x for x in dg['reviewText']]
 y = [x for x in dg['sentiment']]
-print(X[0])
+#split data using pandas train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=500, random_state=42, train_size=5000, stratify=y)
-print(y_train)
 
 
-X_train_bow, X_test_bow = vectorizer.fit_transform(
-    X_train), vectorizer.transform(X_test)
-
+X_train_bow, X_test_bow = vectorizer.fit_transform(X_train), vectorizer.transform(X_test)
 
 # %%
-
-clf = RandomForestClassifier(random_state=0)
-clf.fit(X_train_bow, y_train)
-clf.score(X_test_bow, y_test)
-
-
-# %%
+# gradient boost classifier from scikit learn.
 clf = GradientBoostingClassifier(n_estimators=4000, learning_rate=0.5,
                                  max_depth=2, random_state=42, warm_start=True).fit(X_train_bow, y_train)
+# score on test data.
 clf.score(X_test_bow, y_test)
-# %%
 
-test = ["very bad product"]
-X_test_2 = vectorizer.trans(test)
-clf.predict(X_test_2)
 # %%
-test_set = ['very fun', "bad book do not buy", 'horrible waste of time']
+# testing model. 
+test_set = ['good', "terrible ", 'waste of time']
 new_test = vectorizer.transform(test_set)
 
 clf.predict(new_test)
+#%% 
+# save model to be used in bot.
+with open('sentiment_model.pkl', 'wb') as f:
+    pickle.dump(clf, f)
+# save vectorizer
+with open('vectorizer.pkl', 'wb') as f:
+  pickle.dump(vectorizer, f)
+
+# %%
