@@ -5,6 +5,7 @@ import sklearn
 from process_data import  allWords, convoLabels, data
 from NN import convert_input_to_bow
 from NN import model
+from Natural_Entity_Recognition import convert_input_ner
 # these are the model and function for chatting
 # from process_data import ..... (you can load functions, varibles....)
 
@@ -23,15 +24,30 @@ def start():
         reading = input()
         if reading.strip().lower() == "quit":
             break
-        #get the prediction matrix with the probabilities of correct responses.
-        output = model.predict([convert_input_to_bow(reading, allWords )])
-        #get the prediction with max probability.
+        
+        ner = convert_input_ner(reading)
 
-        #get the sentiment of user input
-        sent_out = loaded_clf.predict_proba(input_to_bow_sentiment(reading))
+        input_after_ner, replaced_word  = ner[0], ner[1] 
+                #get the prediction matrix with the probabilities of correct responses.
+        output = model.predict([convert_input_to_bow(input_after_ner, allWords )])
+        #get the prediction with max probability.
+        output_i = numpy.argmax(output)
+
+        print(input_after_ner)
+ 
+        sent_out = loaded_clf.predict(input_to_bow_sentiment(reading))
+        # sent_out.replace("<GPE>", replaced_word)
+        print(sent_out)
+
+        # #extract the correct response from intents.json.
+        # cor_label = convoLabels[output_i]
+        # for label in data['intents']:
+        #     if label['tag'] == cor_label:
+        #         cor_responses = label['responses']
 
         #Just print a random response.
         print(f'bot: {random.choice(output_depending_on_sentiment(sent_out,output))}')
+        print(f'bot: {random.choice(cor_responses).replace("<GPE>", replaced_word)}')
         print(" ")
 
 

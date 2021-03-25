@@ -98,6 +98,12 @@
         "patterns": ["Can I have some bread","what bread do you have", "Do you have bread", "I want bread","Can I have bread","how much does bread cost","What bread do you sell","Do you still have bread"],
         "responses": ["We have lots of bread, such as white, wholewheat, or sourdough bread. For more information, visit our website BakeSakura.com"],
         "context_set": ""
+        },
+
+        {"tag": "google-maps",
+        "patterns": ["how do I get to the shop from <GPE>?","I live <GPE>. How can I reach Sakura?", "Tell me how to get there from <GPE>"],
+        "responses": ["https://www.google.co.in/maps/dir/<GPE>/221B+Baker+Street,+London,+UK"],
+        "context_set": ""
         }
        
      
