@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="022215e6-9a36-4b70-ae0f-27cffe47151d" name="Default Changelist" comment="new branch for handling spelling mistakes">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Bakerai.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Bakerai.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="022215e6-9a36-4b70-ae0f-27cffe47151d" name="Default Changelist" comment="When sentiment is negative, respond with &quot;I am very sorry :(&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/intents.json" beforeDir="false" afterPath="$PROJECT_DIR$/intents.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Sentiment_analysis_incorperation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -106,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1616630769281</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="When sentiment is negative, respond with &quot;I am very sorry :(&quot;">
+      <created>1616638091182</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1616638091182</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +128,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new branch for handling spelling mistakes" />
-    <option name="LAST_COMMIT_MESSAGE" value="new branch for handling spelling mistakes" />
+    <MESSAGE value="When sentiment is negative, respond with &quot;I am very sorry :(&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="When sentiment is negative, respond with &quot;I am very sorry :(&quot;" />
   </component>
 </project>

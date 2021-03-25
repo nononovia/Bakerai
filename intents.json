@@ -98,7 +98,13 @@
         "patterns": [],
         "responses": ["I am very sorry. :("],
         "context_set": ""
+        },
+        {"tag": "default",
+        "patterns": [],
+        "responses": ["Sorry, I can't seem to understand... :(", "For detailed information, visit our website BakeSakura.com","Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."],
+        "context_set": ""
         }
+
 
 ]
 }
