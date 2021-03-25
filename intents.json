@@ -41,7 +41,17 @@
         },
         {"tag": "drink",
          "patterns": ["what drinks do you have", "Do you have anything to drink", "Do you have coffee","Can I have a cup of coffee with it","how much does coffee cost","I want coffee","I want something to drink","Do you still have coffee", "how about drinks"],
-         "responses": ["We offer coffee with our baked goods, its $3 a cup!"],
+         "responses": ["We offer coffee and bubble tea with our baked goods, its $3 a cup for coffee and $5 a cup for bubble tea!"],
+         "context_set": ""
+        },
+        {"tag": "bubble tea",
+         "patterns": ["what kind of bubble tea do you have?", "Do you have bubble tea?", "Do you have milk tea","Can I have a bubble tea with it","how much does bubble tea cost","I want bubble tea","Do you still have bubble tea"],
+         "responses": ["Bubble tea is $5 a cup, we have strawberry and mango flavours!"],
+         "context_set": ""
+        },
+        {"tag": "ice cream",
+         "patterns": ["Do you have any ice cream", "Do you have ice cream","Can I have an ice cream with it?","how much does ice cream cost","I want ice cream","I want some ice cream","Do you still have ice cream", "how about ice cream"],
+         "responses": ["We offer chocolate and vanilla ice cream, they are $4 each!"],
          "context_set": ""
         },
         {"tag": "location",
@@ -93,6 +103,18 @@
         "patterns": ["Can I have some bread","what bread do you have", "Do you have bread", "I want bread","Can I have bread","how much does bread cost","What bread do you sell","Do you still have bread"],
         "responses": ["We have lots of bread, such as white, wholewheat, or sourdough bread. For more information, visit our website BakeSakura.com"],
         "context_set": ""
+        },
+       {"tag": "negative",
+        "patterns": [],
+        "responses": ["You seem unhappy, I am very sorry. :("],
+        "context_set": ""
+        },
+        {"tag": "default",
+        "patterns": [],
+        "responses": ["Sorry, I can't seem to understand... :(", "For detailed information, visit our website BakeSakura.com","Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."],
+        "context_set": ""
         }
+
+
 ]
 }
