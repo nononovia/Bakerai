@@ -1,6 +1,7 @@
 import numpy
 import random
 import pickle
+import sklearn
 from process_data import  allWords, convoLabels, data
 from NN import convert_input_to_bow
 from NN import model
