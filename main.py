@@ -65,10 +65,10 @@ def output_depending_on_sentiment(sentiment,output):
     else:
         if numpy.amax(output) > 0.5:
             output_i = numpy.argmax(output)
+            cor_label = convoLabels[output_i]
         else:
             cor_label = "default";
         # extract the correct response from intents.json.
-        cor_label = convoLabels[output_i]
     for label in data['intents']:
         if label['tag'] == cor_label:
             cor_responses = label['responses']
