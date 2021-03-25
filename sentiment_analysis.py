@@ -82,10 +82,10 @@ new_test = vectorizer.transform(test_set)
 clf.predict(new_test)
 #%% 
 # save model to be used in bot.
-with open('sentiment_model.pkl', 'wb') as f:
+with open('./sentiment_models/sentiment_model.pkl', 'wb') as f:
     pickle.dump(clf, f)
 # save vectorizer
-with open('vectorizer.pkl', 'wb') as f:
+with open('./sentiment_models/vectorizer.pkl', 'wb') as f:
   pickle.dump(vectorizer, f)
 
 # %%

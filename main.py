@@ -40,11 +40,15 @@ def start():
         print(f'bot: {random.choice(cor_responses)}')
         print(" ")
 
+
+
+
+
 def load_sentiment_analysis(): 
-    with open('sentiment_model.pkl', 'rb') as f:
+    with open('./sentiment_models/sentiment_model.pkl', 'rb') as f:
         loaded_clf = pickle.load(f)
 
-    with open('vectorizer.pkl', 'rb') as f:
+    with open('./sentiment_models/vectorizer.pkl', 'rb') as f:
         vectorizer = pickle.load(f)
     return [loaded_clf,vectorizer]
 
@@ -55,8 +59,6 @@ def input_to_bow_sentiment(words):
     return wrds_list_bow
 
        
-
-
 
 if __name__ == "__main__":
     start()
