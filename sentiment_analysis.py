@@ -62,7 +62,7 @@ X = [x for x in dg['reviewText']]
 y = [x for x in dg['sentiment']]
 #split data using pandas train_test_split
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=500, random_state=42, train_size=5000, stratify=y)
+    X, y, test_size=500, random_state=42, train_size=10000)
 
 
 X_train_bow, X_test_bow = vectorizer.fit_transform(X_train), vectorizer.transform(X_test)
@@ -76,7 +76,7 @@ clf.score(X_test_bow, y_test)
 
 # %%
 # testing model. 
-test_set = ['good', "terrible ", 'waste of time']
+test_set = ['good', "terrible ", 'waste of time','I hate this product']
 new_test = vectorizer.transform(test_set)
 
 clf.predict(new_test)
