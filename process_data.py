@@ -1,7 +1,7 @@
 import nltk
 from nltk.stem import PorterStemmer
 ps = PorterStemmer()
-nltk.download('punkt')
+#nltk.download('punkt')
 import numpy as np
 import json
 import pickle
