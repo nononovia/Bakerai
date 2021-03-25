@@ -2,18 +2,29 @@
 import socket
 class ourServer():
     def __init__(self):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        sock.bind(("0.0.0.0",8080)) # Bind to an address to recive client responses
-        sock.listen(10)
-        while(True):
-            conn, addr, = sock.accept()
-            clientStr = ""
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    
+    def openCloseConnection(self):
+        self.sock.bind(("127.0.0.1", 8080)) # Bind to an address to recive client responses
+        self.sock.listen(1) # Get one clinet
+        conn, addr, = self.sock.accept()
 
-            while(True):
-                data=conn.recv(4096)
-                if not data: break
-                clientStr += data
-                print(clientStr)
-                conn.send("Server response \n")
-            conn.close()
-            print("We've lost our client")
+        while(True): # While we still get valid responses from our 1 client
+            clientResponse=self.getResponse(conn)
+            if not clientResponse: # If the data we got is empty
+                break
+
+            print(clientResponse)
+            self.sendResponse("Server response:", conn)
+        conn.close()
+        print("We've lost our client")
+
+    def getResponse(self, conn):
+        return conn.recv(4096).decode("utf-8")
+    
+    def sendResponse(self, msg, conn):
+        conn.send(bytes(msg.encode()))
+
+if __name__ == "__main__":
+    server = ourServer()
+    server.openCloseConnection()
