@@ -14,13 +14,20 @@ class ourClient():
     
     def close(self):
         self.sock.close()
+    
+    def runClient(self):
+        ip = input ("enter target IP Address: ")
+        port = int(input("enter target port: "))
+        client.connect((ip, port)) 
+        userInput = ""
+        while userInput != "quit":
+            userInput = input("Send a message: ")
+            client.sendResponse(userInput)
+            response = client.getResponse()
+            print("Server response: " + response)
+        client.close()
 
 if __name__ == "__main__":
     client = ourClient()
-    client.connect(("127.0.0.1", 8080)) 
-    userInput = ""
-    while userInput != "quit":
-        client.sendResponse(input("Send a message: "))
-        response = client.getResponse()
-        print(response)
-    client.close()
+    client.runClient()
+    
