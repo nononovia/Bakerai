@@ -1,7 +1,7 @@
 import nltk
-from nltk.stem.lancaster import LancasterStemmer
-stemmer = LancasterStemmer()
-nltk.download('punkt')
+from nltk.stem import PorterStemmer
+ps = PorterStemmer()
+#nltk.download('punkt')
 import numpy as np
 import json
 import pickle
@@ -44,7 +44,7 @@ except:
             docs_x.append(tempWrds)
             docs_pattern.append(intent["tag"])
     # Turn all words to lowercase
-    allWords = [stemmer.stem(w.lower()) for w in allWords if w != "?"]
+    allWords = [ps.stem(w.lower()) for w in allWords if w != "?"]
 
     # Remove all duplicates, and sort words (for easier use)
     allWords = sorted(list(set(allWords)))
@@ -58,7 +58,7 @@ except:
     for i, doc in enumerate(docs_x):
         bag = []
         # Simplify words to the root word
-        wrds = [stemmer.stem(w) for w in doc] 
+        wrds = [ps.stem(w) for w in doc]
 
         for word in allWords: 
             if word in wrds: # This word is in our sentence
