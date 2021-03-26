@@ -3,7 +3,7 @@ import tkinter.ttk as ttk
 import main as m
 
 FONT = ("Verdana",12)
-
+TITLE_FONT = ("Verdana",16)
 # Based off of my own application in Tkinter previously
 class bakerClient(tk.Tk):
     def __init__(self,*args,**kwargs):
@@ -18,17 +18,18 @@ class bakerClient(tk.Tk):
         # Format: min size, weight is z index
         parent.grid_rowconfigure(0, weight=1)
         parent.grid_columnconfigure(0, weight=1)
-        
+        # Main frame layout: where content is stored 
         mainFrame = tk.Frame(parent)
         mainFrame.pack(side="top",fill="both",expand=True)
         for i in range(9):
             mainFrame.grid_rowconfigure(index=i, weight=1)
             mainFrame.grid_columnconfigure(index=i, weight=1)
         self.loaded_clf = m.load_sentiment_analysis()[0]
-
-
-        title = tk.Label(mainFrame, text="Welcome to Sakura's very own BakerAI!", font=FONT)
-        title.grid(row=1,column=0,columnspan=7)
+        
+        # Elements of the main frame #
+        # Title
+        title = tk.Label(mainFrame, text="Welcome to Sakura's very own BakerAI!", font=TITLE_FONT)
+        title.grid(row=1,column=1,columnspan=7)
         # What we will change to show output
         self.outputBox = tk.Text(mainFrame, font=FONT)
         self.outputBox.grid(row=3, column=1, columnspan=7, rowspan=1, sticky="")
@@ -39,6 +40,8 @@ class bakerClient(tk.Tk):
         self.outputBox.config(yscrollcommand=scrollbar.set)
 
         # Input related items
+        entryLabel = tk.Label(mainFrame, text="Enter your text below!", font=FONT)
+        entryLabel.grid(row=4, column=2, columnspan=2, sticky="")
         self.userInput = tk.Entry(mainFrame)
         self.userInput.grid(row=5, column=1, columnspan=4, sticky="EW")
         sendButton = tk.Button(mainFrame, text="Send message", command=lambda: self.getResponse())
