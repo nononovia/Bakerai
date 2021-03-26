@@ -46,16 +46,16 @@ nerual_net = tflearn.regression(nerual_net)
 model = tflearn.DNN(nerual_net)
 # this model untilize DNN(deep neural network) for natural langrage processing
 
-try:
+# try:
     
     
-    model.load("model.tflearn")
-except:
-    model.fit(training, output, n_epoch=1000, batch_size=8)
-#     # this is where model is trained
-#     # training and output both pass in
-#     # n_epoch is for how many its going to see the same data, in this case its 1000 time(we expect the more we show the same data, the better it is classifying )
-#     # we pass in 8 batch at a time
+# model.load("model.tflearn")
+# except:
+model.fit(training, output, n_epoch=1000, batch_size=8)
+# #     # this is where model is trained
+# #     # training and output both pass in
+# #     # n_epoch is for how many its going to see the same data, in this case its 1000 time(we expect the more we show the same data, the better it is classifying )
+# #     # we pass in 8 batch at a time
 
-    model.save("model.tflearn")
+model.save("model.tflearn")
 
