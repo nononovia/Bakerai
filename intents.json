@@ -101,8 +101,8 @@
         },
 
         {"tag": "google-maps",
-        "patterns": ["how do I get to the shop from <GPE>?","I live <GPE>. How can I reach Sakura?", "Tell me how to get there from <GPE>"],
-        "responses": ["https://www.google.co.in/maps/dir/<GPE>/221B+Baker+Street,+London,+UK"],
+        "patterns": ["how do I get to the shop from <GPE> ?","I live in <GPE>. How can I reach Sakura?", "Tell me how to get there from <GPE>"],
+        "responses": ["Here you go: https://www.google.co.in/maps/dir/<GPE>/221B+Baker+Street,+London,+UK"],
         "context_set": ""
         }
        
