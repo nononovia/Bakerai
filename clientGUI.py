@@ -33,10 +33,11 @@ class bakerClient(tk.Tk):
         # What we will change to show output
         self.outputBox = tk.Text(mainFrame, font=FONT)
         self.outputBox.grid(row=3, column=1, columnspan=7, rowspan=1, sticky="")
-        self.outputBox.insert(tk.END,"BakerAI: Hey there! How can I help you? ")
+        self.outputBox.insert(tk.END,"BakerAI: Hey there! How can I help you? \n")
         self.outputBox.configure(state="disabled")
         scrollbar = tk.Scrollbar(self)
         scrollbar.config(command = self.outputBox.yview)
+        scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.outputBox.config(yscrollcommand=scrollbar.set)
 
         # Input related items
@@ -45,11 +46,15 @@ class bakerClient(tk.Tk):
         self.userInput = tk.Entry(mainFrame)
         self.userInput.grid(row=5, column=1, columnspan=4, sticky="EW")
         sendButton = tk.Button(mainFrame, text="Send message", command=lambda: self.getResponse())
-        sendButton.grid(row=5, column=7, columnspan=1, sticky="EW")
+        sendButton.grid(row=5, column=6, columnspan=1, sticky="EW")
+        self.userInput.bind("<Return>", lambda x: self.getResponse())
 
     def getResponse(self):
         # Get user message
         userMessage = self.userInput.get()
+        # Ignore empty messages
+        if userMessage == "":
+            return
         # Clear the user input
         self.userInput.delete(0, "end")
         # Get our reply
