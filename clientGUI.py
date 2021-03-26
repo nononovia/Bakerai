@@ -34,3 +34,15 @@ class bakerClient(tk.Tk):
         self.userInput.grid(row=5, column=1, columnspan=4, sticky="EW")
         sendButton = tk.Button(mainFrame, text="Send message", command=lambda: self.getResponse())
         sendButton.grid(row=5, column=6, columnspan=2, sticky="EW")
+
+    def getResponse(self):
+        # Get user message
+        userMessage = self.userInput.get()
+        # Clear the user input
+        self.userInput.delete(0, "end")
+
+
+if __name__ == '__main__':
+    client = bakerClient()
+    client.mainloop()
+
