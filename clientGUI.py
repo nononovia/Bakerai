@@ -22,3 +22,15 @@ class bakerClient(tk.Tk):
         for i in range(7):
             mainFrame.grid_rowconfigure(index=i, weight=1)
             mainFrame.grid_columnconfigure(index=i, weight=1)
+
+
+        title = tk.Label(mainFrame, text="Welcome to Sakura's very own BakerAI!", font=FONT)
+        title.grid(row=0,column=0,columnspan=7)
+        # What we will change to show output
+        self.outputLabel = tk.Label(mainFrame, text="Where Bot will Reply", font=FONT)
+        self.outputLabel.grid(row=3, column=0, columnspan=2, sticky="NSEW")
+        # Input related items
+        self.userInput = tk.Entry(mainFrame)
+        self.userInput.grid(row=5, column=1, columnspan=4, sticky="EW")
+        sendButton = tk.Button(mainFrame, text="Send message", command=lambda: self.getResponse())
+        sendButton.grid(row=5, column=6, columnspan=2, sticky="EW")
