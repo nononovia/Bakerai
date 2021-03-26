@@ -8,8 +8,9 @@ FONT = ("Verdana",12)
 class bakerClient(tk.Tk):
     def __init__(self,*args,**kwargs):
         tk.Tk.__init__(self,*args,**kwargs)
+        # Set title and good inital window size
         tk.Tk.wm_title(self, "BakerAI")
-        self.geometry("700x500")
+        self.geometry("1000x700")
 
         # Container is parent frame, containing all frames
         parent = tk.Frame(self)
@@ -31,15 +32,17 @@ class bakerClient(tk.Tk):
         # What we will change to show output
         self.outputBox = tk.Text(mainFrame, font=FONT)
         self.outputBox.grid(row=3, column=1, columnspan=7, rowspan=1, sticky="")
+        self.outputBox.insert(tk.END,"BakerAI: Hey there! How can I help you? ")
         self.outputBox.configure(state="disabled")
         scrollbar = tk.Scrollbar(self)
         scrollbar.config(command = self.outputBox.yview)
         self.outputBox.config(yscrollcommand=scrollbar.set)
+
         # Input related items
         self.userInput = tk.Entry(mainFrame)
         self.userInput.grid(row=5, column=1, columnspan=4, sticky="EW")
         sendButton = tk.Button(mainFrame, text="Send message", command=lambda: self.getResponse())
-        sendButton.grid(row=5, column=7, columnspan=2, sticky="EW")
+        sendButton.grid(row=5, column=7, columnspan=1, sticky="EW")
 
     def getResponse(self):
         # Get user message
