@@ -15,7 +15,7 @@ from process_data import training, output
 def convert_input_to_bow(s, wrds): 
     bow = [0 for _ in range(len(wrds))]
     s_wrds = nltk.word_tokenize(s)
-    s_wrds = [stemmer.stem(wrd.lower()) for wrd in s_wrds]
+    s_wrds = [stemmer.stem(wrd.lower().strip()) for wrd in s_wrds], 
 
     for x in s_wrds: 
         for i, j in enumerate(wrds): 
@@ -49,13 +49,13 @@ model = tflearn.DNN(nerual_net)
 # try:
     
     
-# model.load("model.tflearn")
-# except:
-model.fit(training, output, n_epoch=1000, batch_size=8)
-# #     # this is where model is trained
-# #     # training and output both pass in
-# #     # n_epoch is for how many its going to see the same data, in this case its 1000 time(we expect the more we show the same data, the better it is classifying )
-# #     # we pass in 8 batch at a time
+model.load("./bot_model/*")
+# # except:
+# model.fit(training, output, n_epoch=2000, batch_size=8)
+# # #     # this is where model is trained
+# # #     # training and output both pass in
+# # #     # n_epoch is for how many its going to see the same data, in this case its 1000 time(we expect the more we show the same data, the better it is classifying )
+# # #     # we pass in 8 batch at a time
 
-model.save("model.tflearn")
+# model.save("./bot_model/model.tflearn")
 

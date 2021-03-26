@@ -30,27 +30,16 @@ def start():
         input_after_ner, replaced_word  = ner[0], ner[1] 
                 #get the prediction matrix with the probabilities of correct responses.
         # print(input_after_ner)
-        print(input_after_ner, allWords)
+        # print(input_after_ner, allWords)
         output = model.predict([convert_input_to_bow(input_after_ner, allWords )])
-        #get the prediction with max probability.
-        # output_i = numpy.argmax(output)
 
-        # print(input_after_ner)
-        # print(output)
  
-        sent_out = loaded_clf.predict(input_to_bow_sentiment(reading))
-        # print(loaded_clf.predict_proba(input_to_bow_sentiment(reading)))
-        # sent_out.replace("<GPE>", replaced_word)
-        # print(sent_out)
-
-        # #extract the correct response from intents.json.
-        # cor_label = convoLabels[output_i]
-        # for label in data['intents']:
-        #     if label['tag'] == cor_label:
-        #         cor_responses = label['responses']
+        print(input_after_ner)
+        sent_out = loaded_clf.predict_proba(input_to_bow_sentiment(reading))
+        
 
         #Just print a random response.
-        print(f'bot: {random.choice(output_depending_on_sentiment_and_ner(sent_out,output,replaced_word)).replace("<GPE>", replaced_word)}')
+        print(f'bot: {process_after_ner(random.choice(output_depending_on_sentiment(sent_out,output) ),replaced_word)}')
         print(" ")
 
 

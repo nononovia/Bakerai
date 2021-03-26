@@ -55,12 +55,12 @@
          "context_set": ""
         },
         {"tag": "customize",
-         "patterns": ["Can I customize a cake", "Can I order a wedding cake", "how much would a customized cake cost","I want to customize a cake","I want a wedding case","I need a customized cake","how do I customize cakes"],
+         "patterns": ["Can I customize a cake", "Can I order a wedding cake", "I want to customize a cake","I want a wedding case","I need a customized cake","how do I customize cakes"],
          "responses": ["We offer cake customization, come to our shop at 221B Baker Street to discuss the details with our cake designers!"],
          "context_set": ""
         },
         {"tag": "allergy",
-         "patterns": ["Does the baked goods contain peanuts", "I am allergic to peanuts","make sure nothing contains peanut, I am allergic","I am allergic to diary products","Does anything contain diary? I am lactose intolerant", "i am allergic"],
+         "patterns": ["Does the baked goods contain peanuts", "I am allergic to peanuts","make sure nothing contains peanut, I am allergic","I am allergic to diary products","Does anything contain diary? I am lactose intolerant", "i am allergic", "allergy"],
          "responses": ["None of our product contain any nuts, yet all of our product contain or was made with products that contain diary products."],
          "context_set": ""
         },
@@ -75,7 +75,7 @@
          "context_set": ""
         },
         {"tag": "history",
-        "patterns": ["How long have you been in operation?", "When did you start?", "How old is the bakery?"],
+        "patterns": ["How long have you been in operation?", "When did you start?"],
         "responses": ["Our founder is secret. We have been open since 2015.", "We opened in 2015, thanks to our secret founder."],
         "context": ""
         },

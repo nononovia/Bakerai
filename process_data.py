@@ -16,9 +16,9 @@ with open(f'{pathlib.Path(__file__).parent.absolute()}\\intents.json') as jsonFi
 
     data = json.load(jsonFile)
 try:
-    x
+    
     #check for caching the model so that don't have to train the model everytime.
-    with open("data.pickle", "rb") as f: 
+    with open("./bot_model/data.pickle", "rb") as f: 
         allWords, convoLabels, training, output = pickle.load(f)
 
 
@@ -77,6 +77,6 @@ except:
     training = np.array(training)
     output = np.array(output)
     
-    with open("data.pickle", "wb") as f: 
+    with open("./bot_model/data.pickle", "wb") as f: 
         pickle.dump((allWords,  convoLabels, training, output ), f)
      
