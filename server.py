@@ -29,9 +29,9 @@ class ourServer():
         conn.send(bytes(msg.encode()))
     
     def runServer(self):
-        ip = input ("enter host IP Address: ")
+        ip = socket.gethostname()
         port = int(input("enter target port: "))
-        server.openCloseConnection(("127.0.0.1", 8080))
+        server.openCloseConnection((ip, port))
 
 if __name__ == "__main__":
     server = ourServer()
