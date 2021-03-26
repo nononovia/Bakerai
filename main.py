@@ -28,14 +28,7 @@ def start():
         #get the prediction with max probability.
 
         #get the sentiment of user input
-        sent_out = loaded_clf.predict(input_to_bow_sentiment(reading))
-        print(sent_out)
-
-        # #extract the correct response from intents.json.
-        # cor_label = convoLabels[output_i]
-        # for label in data['intents']:
-        #     if label['tag'] == cor_label:
-        #         cor_responses = label['responses']
+        sent_out = loaded_clf.predict_proba(input_to_bow_sentiment(reading))
 
         #Just print a random response.
         print(f'bot: {random.choice(output_depending_on_sentiment(sent_out,output))}')
@@ -60,27 +53,26 @@ def input_to_bow_sentiment(words):
     return wrds_list_bow
 
 def output_depending_on_sentiment(sentiment,output):
-    if sentiment == "NEGATIVE":
-        # cor_label = "negative",
-        print("You don't seem to be happy. I am sorry :(")
-        return 
+    if sentiment[0][0] > 0.6:
+        negative = ["You seem unhappy. I am sorry :("]
+        return negative
 
     else:
-        if numpy.amax(output) > 0.5:
+        if numpy.amax(output) > 0.8:
             output_i = numpy.argmax(output)
             cor_label = convoLabels[output_i]
 
             for label in data['intents']:
-
-             if label['tag'] == cor_label:
-                cor_responses = label['responses']
+                if label['tag'] == cor_label:
+                    cor_responses = label['responses']
             return cor_responses
 
-
         else:
-            print("dont know what you on about")
+            default = ["Sorry, I can't seem to understand... :(", "For detailed information, visit our website BakeSakura.com","Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."]
+            return default
+
         # extract the correct response from intents.json.
-   
+
 
        
 
