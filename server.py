@@ -20,8 +20,8 @@ class ourServer():
             print("Client message: " + clientResponse)
             response = m.getFinalOutput(loaded_clf, clientResponse)
 
-            #if clientResponse == "quit":
-            #    response = "Goodbye!"
+            if clientResponse == "quit":
+                response = "Goodbye!"
             self.sendResponse(response, conn)
         conn.close()
         print("We've lost our client")
