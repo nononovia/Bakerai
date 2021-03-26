@@ -53,7 +53,7 @@ def input_to_bow_sentiment(words):
     return wrds_list_bow
 
 def output_depending_on_sentiment(sentiment,output):
-    if sentiment[0][0] > 0.60:
+    if sentiment[0][0] > 0.65:
         negative = ["You seem unhappy. I am sorry :("]
         return negative
 
