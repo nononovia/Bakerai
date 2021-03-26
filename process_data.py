@@ -15,7 +15,8 @@ import pathlib
 with open(f'{pathlib.Path(__file__).parent.absolute()}\\intents.json') as jsonFile:
 
     data = json.load(jsonFile)
-try: 
+try:
+
     #check for caching the model so that don't have to train the model everytime.
     with open("data.pickle", "rb") as f: 
         allWords, convoLabels, training, output = pickle.load(f)

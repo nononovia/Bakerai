@@ -78,7 +78,6 @@ clf.score(X_test_bow, y_test)
 # testing model. 
 test_set = ['good', "terrible ", 'waste of time']
 new_test = vectorizer.transform(test_set)
-
 clf.predict(new_test)
 #%% 
 # save model to be used in bot.

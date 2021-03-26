@@ -1,6 +1,7 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
-stemmer = LancasterStemmer()
+from nltk.stem import PorterStemmer
+stemmer = PorterStemmer()
 nltk.download('punkt')
 import numpy
 import tflearn
@@ -30,10 +31,12 @@ def convert_input_to_bow(s, wrds):
 
 nerual_net = tflearn.input_data(shape=[None, len(training[0])])
 # this create input data for the RNN 
-nerual_net = tflearn.fully_connected(nerual_net, 8)
-# first hidden layer with 8 neruon
-nerual_net = tflearn.fully_connected(nerual_net, 8)
-# second hidden layer with 8 neruon
+nerual_net = tflearn.fully_connected(nerual_net, 12)
+# first hidden layer with 12 neruon
+nerual_net = tflearn.fully_connected(nerual_net, 12)
+# second hidden layer with 12 neruon
+
+nerual_net = tflearn.fully_connected(nerual_net, 12)
 
 nerual_net = tflearn.fully_connected(nerual_net, len(output[0]), activation="softmax")
 # output layer and declare activiation function for this NN. In this case is softmax
@@ -48,11 +51,11 @@ try:
     
     model.load("model.tflearn")
 except:
-    model.fit(training, output, n_epoch=3000, batch_size=8, show_metric=True)
-    # this is where model is trained
-    # training and output both pass in
-    # n_epoch is for how many its going to see the same data, in this case its 1000 time(we expect the more we show the same data, the better it is classifying )
-    # we pass in 8 batch at a time
+    model.fit(training, output, n_epoch=1000, batch_size=8)
+#     # this is where model is trained
+#     # training and output both pass in
+#     # n_epoch is for how many its going to see the same data, in this case its 1000 time(we expect the more we show the same data, the better it is classifying )
+#     # we pass in 8 batch at a time
 
     model.save("model.tflearn")
 
