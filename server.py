@@ -1,5 +1,7 @@
 # Based on the following tutorial: https://www.pubnub.com/blog/socket-programming-in-python-client-server-p2p/
 import socket
+import main as m
+
 class ourServer():
     def __init__(self):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -9,15 +11,17 @@ class ourServer():
         self.sock.listen(1) # Get one clinet
         conn, addr, = self.sock.accept()
 
+        loaded_clf = m.load_sentiment_analysis()[0]
         while(True): # While we still get valid responses from our 1 client
             clientResponse=self.getResponse(conn)
             if not clientResponse: # If the data we got is empty or terminating condition
                 break
 
             print("Client message: " + clientResponse)
-            response = "generic server response"
-            if clientResponse == "quit":
-                response = "Goodbye!"
+            response = m.getFinalOutput(loaded_clf, clientResponse)
+
+            #if clientResponse == "quit":
+            #    response = "Goodbye!"
             self.sendResponse(response, conn)
         conn.close()
         print("We've lost our client")
