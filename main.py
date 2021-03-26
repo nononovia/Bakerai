@@ -16,25 +16,27 @@ from NN import model
 #start chat - 'quit' to quit.
 
 def start():
+    loaded_clf = load_sentiment_analysis()[0]
     print("\n\n\n\n\n")
     print("Hello! This is the chatbot. I am here to tell you about the bakery Sakura! (type 'quit' to quit.) Let's chat:", flush = True)
-    loaded_clf = load_sentiment_analysis()[0]
     while True:
         reading = input()
         if reading.strip().lower() == "quit":
             break
-        #get the prediction matrix with the probabilities of correct responses.
-        output = model.predict([convert_input_to_bow(reading, allWords )])
-        #get the prediction with max probability.
 
-        #get the sentiment of user input
-        sent_out = loaded_clf.predict_proba(input_to_bow_sentiment(reading))
-
-        #Just print a random response.
-        print(f'bot: {random.choice(output_depending_on_sentiment(sent_out,output))}')
+        # print a response.
+        print(f'bot: {getFinalOutput(loaded_clf,reading)}')
         print(" ")
 
+def getFinalOutput(loaded_clf, reading):
+    output = model.predict([convert_input_to_bow(reading, allWords )])
+    #get the prediction with max probability.
 
+    #get the sentiment of user input
+    sent_out = loaded_clf.predict_proba(input_to_bow_sentiment(reading))
+
+    #Random response
+    return random.choice(output_depending_on_sentiment(sent_out,output))
 
 
 
