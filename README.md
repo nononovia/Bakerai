@@ -118,6 +118,8 @@ This is the data which the model is trained on. The model uses the 'tags' and 'p
 
 ### `server.py and client.py`
 
+These files work intertwined with each other. server.py has a template to a server class, and when run as a main method, creates a server prepared to respond to queries with bot responses. 
+client.py contains the class template for the client designed to connect to the opened server. After running the file as main and entering the corresponding address and port name, clients are able to begin sending messages to the server, and reciving responses from the bot on their local machine.
 
 ### `unit-testing.py`
 
