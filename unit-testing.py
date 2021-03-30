@@ -3,7 +3,8 @@ import main as m
 import json
 import pathlib
 # Define some constants which we may use for our testing
-NEGATIVE_TESTS = ["this is a bad terrible awful low quality product"]
+NEGATIVE_TESTS = ["this is a bad terrible awful low quality product", "you are doing a terrible job", "you are bad at this" 
+   , " horrible assistant ", "you are not useful at all","you are terrible at your job "]
 DEFAULT_TESTS = ["what the"]
 
 with open(f'{pathlib.Path(__file__).parent.absolute()}\\intents.json') as jsonFile:
