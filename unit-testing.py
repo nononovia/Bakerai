@@ -14,6 +14,7 @@ class testBotMethods(unittest.TestCase):
             self.data = json.load(jsonFile)
         
     def testIntent(self):
+        print("Negative intentent testing:")
         totalSuccess = 0
         totalFail = 0
         # ensure an extremely negative response is negative
@@ -22,12 +23,15 @@ class testBotMethods(unittest.TestCase):
             try:
                 self.assertTrue(modelResponse in m.NEGATIVE_RESPONSES)
                 totalSuccess += 1
-            except:
+            except AssertionError as e:
                 print(f'AI response failed test for input: "{sampleInput}"')
                 totalFail+= 1
-        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.')
+        if(totalFail == 0):
+            print("----No tests failed----")
+        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.\n')
 
     def testResponses(self):
+        print("Accurate Response testing:")
         # ensure we can get desired responses for very typical questions
         totalSuccess = 0
         totalFail = 0
@@ -43,27 +47,33 @@ class testBotMethods(unittest.TestCase):
                 try:
                     self.assertTrue(modelResponse in possibleOutputs)
                     totalSuccess+=1
-                except: 
+                except AssertionError as e: 
                     print(f'AI response failed test for input: "{sampleInput}"')
                     totalFail+= 1
-        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.')
+        if(totalFail == 0):
+            print("----No tests failed----")
+        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.\n')
 
     def testDefault(self): 
         # ensure we can get a default response when not discussing any subjects
+        print("Default Response testing:")
         totalSuccess = 0
         totalFail = 0
         for test in DEFAULT_TESTS:
             modelResponse = m.getFinalOutput(self.loaded_clf, test)
             try:
                 self.assertTrue(modelResponse in m.DEFAULT_RESPONSES)
-                totalSucess += 1
-            except:
+                totalSuccess += 1
+            except AssertionError as e:
                 print(f'AI response failed test for input: "{test}"')
-                    totalFail+= 1
-        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.')
+                totalFail += 1
+        if(totalFail == 0):
+            print("----No tests failed----")
+        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.\n')
 
 if __name__ == '__main__':
     sampleTest = testBotMethods()
+    print("\n----Test Results----")
     sampleTest.testDefault()
     sampleTest.testIntent()
     sampleTest.testResponses()
