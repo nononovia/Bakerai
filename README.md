@@ -123,7 +123,7 @@ client.py contains the class template for the client designed to connect to the 
 
 ### `unit-testing.py`
 
-This is the file where we insert test variables and examine wether this bot is fully functional or not. This file consist of three methods: testIntent, testResponses(), testDefault(). TestIntent method tests an extremely negative response is truly negative. TestResponse method ensure we can get desired responses for very typical questions. TestDefault method ensure we can get a default response when not discussing any subjects.
+This is the file where we insert test variables and examine wether this bot is fully functional or not. This file consist of three methods: testIntent, testResponses(), testDefault(). TestIntent method tests an extremely negative response is truly negative. TestResponse method ensure we can get desired responses for very typical questions. TestDefault method ensure we can get a default response when not discussing any subjects. Summary available in 'test-summary.txt'
 
 ### `clientGUI.py`
 
