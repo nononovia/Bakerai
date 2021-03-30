@@ -11,7 +11,8 @@ from NN import model
 #Write a message introducing the chatbot, and print the message to the console
 #Write a loop to repeatedly prompt the user for input, and store that input in a variable. (variable as a function input later)
 #terminate the loop after the user inputs a reserved value of your choosing
-
+DEFAULT_RESPONSES = ["What are you talking about? I don't get it", "Sorry, I can't seem to understand... :(", "Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."]
+NEGATIVE_RESPONSES = ["You seem unhappy. I am sorry :("]
 
 #start chat - 'quit' to quit.
 
@@ -56,8 +57,7 @@ def input_to_bow_sentiment(words):
 
 def output_depending_on_sentiment(sentiment,output):
     if sentiment[0][0] > 0.65:
-        negative = ["You seem unhappy. I am sorry :("]
-        return negative
+        return NEGATIVE_RESPONSES
 
     else:
         if numpy.amax(output) > 0.85:
@@ -70,8 +70,7 @@ def output_depending_on_sentiment(sentiment,output):
             return cor_responses
 
         else:
-            default = ["What are you talking about? I don't get it", "Sorry, I can't seem to understand... :(", "Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."]
-            return default
+            return DEFAULT_RESPONSES
 
         # extract the correct response from intents.json.
 
