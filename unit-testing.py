@@ -1,12 +1,18 @@
 import unittest
 import main as m
+import json
+import pathlib
 # Define some constants which we may use for our testing
 NEGATIVE_TESTS = ["this is a bad terrible awful low quality product"]
 DEFAULT_TESTS = ["what the"]
 
+with open(f'{pathlib.Path(__file__).parent.absolute()}\\intents.json') as jsonFile:
+
+    data = json.load(jsonFile)
+
 class testBotMethods(unittest.TestCase):
     def __init__(self):
-        self.loaded_clf = load_sentiment_analysis()[0]
+        self.loaded_clf = m.load_sentiment_analysis()[0]
         # Take in basic paramaters
         
     def testIntent(self):
@@ -16,12 +22,17 @@ class testBotMethods(unittest.TestCase):
         # ensure an extremely negative response is negative
 
     def testResponses(self):
+        possibleOutputs = []
         # ensure we can get desired responses for very typical questions
-        for tag in intents.json:
-            sampleInput = one of the input sentences for this tag
-            modelResponse = m.getFinalOutput(self.loaded_clf, sampleInput)
-            possibleOutputs = list of all outputs for that tag
-            self.assertTrue(modelResponse in possibleOutputs)
+        for intent in data["intents"]:
+            for pattern in intent["patterns"]: 
+                #sampleInput = one of the input sentences for this tag
+                sampleInput = pattern
+                modelResponse = m.getFinalOutput(self.loaded_clf, sampleInput)
+                for responses in intent["responses"]:
+                    possibleOutputs.append(responses)
+                #possibleOutputs = list of all outputs for that tag
+                self.assertTrue(modelResponse in possibleOutputs)
 
     def testDefault(self): 
         # ensure we can get a default response when not discussing any subjects
