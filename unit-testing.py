@@ -30,4 +30,7 @@ class testBotMethods(unittest.TestCase):
             self.assertTrue(modelResponse in m.DEFAULT_RESPONSES)
 
 if __name__ == '__main__':
-    unittest.main()
+    sampleTest = testBotMethods()
+    sampleTest.testDefault()
+    sampleTest.testIntent()
+    sampleTest.testResponses()
