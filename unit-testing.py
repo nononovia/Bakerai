@@ -6,14 +6,12 @@ import pathlib
 NEGATIVE_TESTS = ["this is a bad terrible awful low quality product"]
 DEFAULT_TESTS = ["what the"]
 
-with open(f'{pathlib.Path(__file__).parent.absolute()}\\intents.json') as jsonFile:
-
-    data = json.load(jsonFile)
-
 class testBotMethods(unittest.TestCase):
     def __init__(self):
         self.loaded_clf = m.load_sentiment_analysis()[0]
         # Take in basic paramaters
+        with open(f'{pathlib.Path(__file__).parent.absolute()}\\intents.json') as jsonFile:
+            self.data = json.load(jsonFile)
         
     def testIntent(self):
         for test in NEGATIVE_TESTS:
@@ -24,7 +22,7 @@ class testBotMethods(unittest.TestCase):
     def testResponses(self):
         possibleOutputs = []
         # ensure we can get desired responses for very typical questions
-        for intent in data["intents"]:
+        for intent in self.data["intents"]:
             for pattern in intent["patterns"]: 
                 #sampleInput = one of the input sentences for this tag
                 sampleInput = pattern
