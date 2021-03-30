@@ -72,6 +72,14 @@
 
     ![location misspelled](./image/ShopLocationSpellingCheck.jpg)
 
+## Sample Dialog with the bot with 30+ turns
+
+![](./image/Screenshot1.jpg)
+
+![](./image/screenshot2.jpg)
+
+![](./image/screenshot3.jpg)
+
 ## How to run
 
 step_0: clone the repo.  
