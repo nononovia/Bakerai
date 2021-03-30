@@ -131,6 +131,8 @@ Client GUI is the class template for a client object. While it's only 1 window a
 
 ### `sentiment_analysis.py `
 
+This file handles the attitude of the user input if the sentiment analysis model recognize it. The training data is cleaned using Pandas and then subset the data to only information is needed which was the reviewText and the rating. The model is trained, and it assignes each review a positive, negative rating depending on the rating. When user input is very likly to be negative, the bot will apologizes to the user.
+
 ## Functions
 
 - Customer service and support.
