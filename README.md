@@ -2,6 +2,29 @@
 
 ## Bakerai is an online chatbot for a imaginary bakery - SAKURA. Bakerai acts as your online assistant to provide customer information they need about SAKURA without leaving the comfort of their home.
 
+## Features implemented in A3: 
+
+* ###    Sentiment Analysis
+    I, Kanishka Verma, was tasked to implement Sentiment Analysis to improve conversation flow. 
+    * Step 1: I found a dataset of amazon reviews. The dataset comprised of thousands of reviews. 
+    * Step 2: Using Pandas,I cleaned the data and then subset the data to only information I needed which was the reviewText and 
+            the rating.
+    * Step 3: I made a new column in the data and assigned each review a positive, negative rating depending on the rating  
+            (num of stars on the review). 
+    * Step 4: Using Pandas, I was able to sample the reviews to obtain testing and training data. Moreover, I made sure there
+            was an equal propotion of negative and positive reviews as in the original data, there were too many positive reviews. 
+    * Step 5: Using the python library, Scikit-learn, I used a bag of words vectorizer to encode the text data in a bag of      words matrix. This technique is also used in our bot.
+    * Step 6: I used several machine learning models and tested the accuracy of the model on testdata. I, then, picked the model with best accuracy and then saved that model. 
+    * Step 7: We had to change the code in our main file main.py to now use this sentiment analysis model to make better predictions.
+
+    ### How the model was used
+
+
+
+    The model is use to classify user input as either positive and negative and if negative connotation is detected with the user input, then the model apologizes to the user. This was not possible with the previous iteration of the chat-bot.  
+    ### Screenshot of the feature in action. 
+
+    
 ## How to run
 
 step_0: clone the repo.  
