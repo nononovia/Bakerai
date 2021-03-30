@@ -28,7 +28,8 @@
 
     ## Conversation snippet
     Below is a conversation snippet:
-    image here
+    ![client](./image/client_screenshot.jpg)
+    ![server](./image/server_screenshot.jpg)
 
 
 * ###    Sentiment Analysis
