@@ -40,9 +40,9 @@
     ### Screenshot of the feature in action. 
     ![cookie misspelled](./image/cooky.jpg)
     
-    ![ice cream misspelled](./image/ice cream spelling error.jpg)
+    ![ice cream misspelled](./image/iceCreamSpellingError.jpg)
     
-    ![location misspelled](./image/Shop location spelling check.jpg)
+    ![location misspelled](./image/ShopLocationSpellingCheck.jpg)
 
 ## How to run
 
