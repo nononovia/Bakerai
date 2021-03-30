@@ -18,7 +18,7 @@
     * Step 7: We had to change the code in our main file main.py to now use this sentiment analysis model to make better predictions.
 
 * ###    Spelling Mistakes Handler
-    Novia Fan and Rick Feng was asked to implement spell check for all user input for better prediction for model.
+    Novia Fan and Rick Feng was tasked to implement spell check for all user input for better prediction for model.
     * Step 1: Tokenize all patterns into bag of words with porter stemmer
     * Step 2: Send bag of words into the model as input training data
     * Step 3: Create and train the Neural Network model so it recognizes spelling mistakes
