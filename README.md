@@ -23,8 +23,10 @@
 
     The model is use to classify user input as either positive and negative and if negative connotation is detected with the user input, then the model apologizes to the user. This was not possible with the previous iteration of the chat-bot.  
     ### Screenshot of the feature in action. 
+    ![img-1](./image/sent1.png)
 
-    
+    ![img-2](./image/sent2.png)
+
 ## How to run
 
 step_0: clone the repo.  
