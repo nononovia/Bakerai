@@ -13,7 +13,12 @@ class testBotMethods(unittest.TestCase):
 
     def testResponses():
         # ensure we can get desired responses for very typical questions
-        
+        for tag in intents.json:
+            sampleInput = one of the input tags
+            modelResponse = m.getFinalOutput(self.loaded_clf, sampleInput)
+            possibleOutputs = list of all outputs for that tag
+            self.assertTrue(modelResponse in possibleOutputs)
+
     def testDefault(): 
         # ensure we can get a default response when not discussing any subjects
 
