@@ -3,9 +3,8 @@ import main as m
 import json
 import pathlib
 # Define some constants which we may use for our testing
-NEGATIVE_TESTS = ["this is a bad terrible awful low quality product", "you are doing a terrible job", "you are bad at this" 
-   , " horrible assistant ", "you are not useful at all","you are terrible at your job "]
-DEFAULT_TESTS = ["what the"]
+NEGATIVE_TESTS = ["this is a bad terrible awful low quality product", "you are doing a terrible job", "you are bad at this", "horrible assistant ", "you are not useful at all","you are terrible at your job "]
+DEFAULT_TESTS = ["what the" , "tell me more", "what is meaning", "did the chicken come before the egg", "how much does a burger cost"]
 
 class testBotMethods(unittest.TestCase):
     def __init__(self):
