@@ -18,7 +18,7 @@
 
     ## Conversation snippet?
     Below is a conversation snippet:
-    image here
+    ![img-1](./image/Baker_GUI.PNG)
 
 * ###   Socket communication
     Socket communication was another feature we chose to implement, done by Elias Pinno. It was unfortunately not included in the GUI, but still works as a proof of concept in client.py and server.py. You can still have conversations with the AI via a remote connection, just not via the GUI. It also involved a lot of refactoring which made the code base a lot easier to call from remote files.
