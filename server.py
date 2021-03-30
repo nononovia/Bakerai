@@ -6,6 +6,7 @@ class ourServer():
     def __init__(self):
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     
+    # Handles an exchange betwen a client
     def openCloseConnection(self, connectionInfo):
         self.sock.bind(connectionInfo) # Bind to an address to recive client responses
         self.sock.listen(1) # Get one clinet
@@ -26,17 +27,20 @@ class ourServer():
         conn.close()
         print("We've lost our client")
 
+    # Gets a response in redable text
     def getResponse(self, conn):
         return conn.recv(4096).decode("utf-8")
     
+    # Sends a response given as readable text
     def sendResponse(self, msg, conn):
         conn.send(bytes(msg.encode()))
     
+    # Starts running the server
     def runServer(self):
         ip = socket.gethostname()
         port = int(input("enter target port: "))
         server.openCloseConnection((ip, port))
-
+# If this file is run as main
 if __name__ == "__main__":
     server = ourServer()
     server.runServer()

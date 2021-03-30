@@ -5,6 +5,7 @@ import sklearn
 from process_data import  allWords, convoLabels, data
 from NN import convert_input_to_bow
 from NN import model
+import clientGUI as c
 # these are the model and function for chatting
 # from process_data import ..... (you can load functions, varibles....)
 
@@ -75,4 +76,6 @@ def output_depending_on_sentiment(sentiment,output):
         # extract the correct response from intents.json.
 
 if __name__ == "__main__":
-    start()
+    #start()
+    client = c.bakerClient()
+    client.mainloop()
