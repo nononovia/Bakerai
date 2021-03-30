@@ -2,46 +2,68 @@
 
 ## Bakerai is an online chatbot for a imaginary bakery - SAKURA. Bakerai acts as your online assistant to provide customer information they need about SAKURA without leaving the comfort of their home.
 
-## Features implemented in A3: 
+## Features implemented in A3:
+
+
+* ###   GUI
+    Elias Pinno, was tasked with implementing the GUI front end for our bot. This involved several key steps:
+    * Step 1: Selecting a GUI framework within the given constraints
+    * Step 2: Code framework reuse from a previous project i've worked on personally
+    * Step 3: The modifcation and adoption of that code to be a workable project for the GUI
+    * Step 4: Hooking up our Chat AI as an endpoint, and begin sending client inputs to the bot
+    * Step 5: Final cleanup stage
+
+    ###
+    This feature was used to improve the interaction between users and the AI, to make talking with the AI more pleseant and more usable outside of strict command line environment. It's visually more pleasing, and opens the possiblity for further features in the future (though in the long run, this product would likely be implemented as a part of a server)
+
+    ###
+    Below is a conversation snippet:
+
+
+* ###   Socket communication
+    Socket communication was another feature we chose to implement, done by Elias Pinno. It was unfortunately not included in the GUI, but still works as a proof of concept in client.py and server.py. You can still have conversations with the AI via a remote connection, just not via the GUI.
+
+
+
 
 * ###    Sentiment Analysis
-    I, Kanishka Verma, was tasked to implement Sentiment Analysis to improve conversation flow. 
-    * Step 1: I found a dataset of amazon reviews. The dataset comprised of thousands of reviews. 
-    * Step 2: Using Pandas,I cleaned the data and then subset the data to only information I needed which was the reviewText and 
+    Kanishka Verma, was tasked to implement Sentiment Analysis to improve conversation flow.
+    * Step 1: I found a dataset of amazon reviews. The dataset comprised of thousands of reviews.
+    * Step 2: Using Pandas,I cleaned the data and then subset the data to only information I needed which was the reviewText and
             the rating.
     * Step 3: I made a new column in the data and assigned each review a positive, negative rating depending on the rating  
-            (num of stars on the review). 
+            (num of stars on the review).
     * Step 4: Using Pandas, I was able to sample the reviews to obtain testing and training data. Moreover, I made sure there
-            was an equal propotion of negative and positive reviews as in the original data, there were too many positive reviews. 
+            was an equal propotion of negative and positive reviews as in the original data, there were too many positive reviews.
     * Step 5: Using the python library, Scikit-learn, I used a bag of words vectorizer to encode the text data in a bag of      words matrix. This technique is also used in our bot.
-    * Step 6: I used several machine learning models and tested the accuracy of the model on testdata. I, then, picked the model with best accuracy and then saved that model. 
+    * Step 6: I used several machine learning models and tested the accuracy of the model on testdata. I, then, picked the model with best accuracy and then saved that model.
     * Step 7: We had to change the code in our main file main.py to now use this sentiment analysis model to make better predictions.
 
     ### How the model was used
 
     The model is use to classify user input as either positive and negative and if negative connotation is detected with the user input, then the model apologizes to the user. This was not possible with the previous iteration of the chat-bot.  
-    ### Screenshot of the feature in action. 
+    ### Screenshot of the feature in action.
     ![img-1](./image/sent1.PNG)
 
     ![img-2](./image/sent2.PNG)
-    
+
 * ###    Spelling Mistakes Handler
     Novia Fan and Rick Feng was tasked to implement spell check for all user input for better prediction for model.
     * Step 1: Tokenize all patterns into bag of words with porter stemmer
     * Step 2: Send bag of words into the model as input training data
     * Step 3: Create and train the Neural Network model so it recognizes spelling mistakes
-    * Step 4: Both NN.py and process_data,py has to adopt with porter stemmer(lancaster stemmer was used before) 
+    * Step 4: Both NN.py and process_data,py has to adopt with porter stemmer(lancaster stemmer was used before)
     * Step 5: Any word that is inputed by user can be recogized as long as its still similar in spelling.
-    
+
     ### How the model was used
-    
+
     The model is used to chekc spelling mistakes that user might make wjile inputing question for the bot to answer. If user input word that resemble a word within patterns. The model will predict with this information in mind.
-    
-    ### Screenshot of the feature in action. 
+
+    ### Screenshot of the feature in action.
     ![cookie misspelled](./image/cooky.jpg)
-    
+
     ![ice cream misspelled](./image/iceCreamSpellingError.jpg)
-    
+
     ![location misspelled](./image/ShopLocationSpellingCheck.jpg)
 
 ## How to run
@@ -140,6 +162,5 @@ Potential allergies?
 
 ### This is the official repository hosting the code which powers Bakerai. Feel free to take a look!
 
-# bye - made with ♥ for COSC 310 [Software Engineering] 
+# bye - made with ♥ for COSC 310 [Software Engineering]
 ### -Team 27: Elias Pinno, Kanishka Verma, Lydia Lin, Rick Feng, Novia Fan
-
