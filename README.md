@@ -4,6 +4,14 @@
 
 ## Features implemented in A3: 
 
+* ###   GUI
+    I, Elias Pinno, was tasked with implementing the GUI front end for our bot. this involved several key steps:
+    * Step 1: Selecting a GUI framework within the given constraints
+    * Step 2: Code framework reuse from a previous project i've worked on personally
+    * Step 3: The modifcation and adoption of that code to be a workable project for the GUI
+    * Step 4: Hooking up our Chat AI as an endpoint, and begin sending client inputs to the bot
+    * Step 5: Final cleanup stage
+
 * ###    Sentiment Analysis
     I, Kanishka Verma, was tasked to implement Sentiment Analysis to improve conversation flow. 
     * Step 1: I found a dataset of amazon reviews. The dataset comprised of thousands of reviews. 
