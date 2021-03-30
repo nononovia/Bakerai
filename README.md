@@ -116,13 +116,10 @@ We then do some processing and return a random response from intents.json depend
 
 This is the data which the model is trained on. The model uses the 'tags' and 'patterns' as input when training. Then the trained model is able to take in some text, compare it with the 'patterns' section of each tag and then try to classify the 'tag' depending on the input. Once we have a 'tag' we just return one of the strings from the 'responses' section of the corresponding tag.
 
-### `server.py`
+### `server.py and client.py`
 
 
 ### `unit-testing.py`
-
-
-### `client.py`
 
 ### `clientGUI.py`
 
