@@ -138,6 +138,18 @@ This file handles the attitude of the user input if the sentiment analysis model
 - Customer service and support.
 - Provide information about products and services to the customer.
 
+## Functionality which could be extracted as an API:
+
+* The most obvious features which could be used as an API is our model getting responses itself. In main.py, we already have our file set up such that with simple function calls, and the users text as input, you can get a reply from the model. You can already call the model in an API kind of way, so that's the first place where API calls could be useful
+
+* For smaller parts of the model which could be extract, the sentiment analysis itself is a seperate model, which can easily be queried given a user input for if the user input is positive or negative in tone. This could be useful in a number of applications, more than just for our specific model.
+
+* The response model itself (with default, spellchecking, and basic response features) can be extracted seperately and used seperately from the sentiment analysis model, enabling API callers to ignore intent in their responses if they want to avoid considering angry customers.
+
+* The client and server architecture with respect to sockets could also be extracted to be used for API calls fairly easily. The object itself is a bit rough around the edges for this task, but with some small modifcations, could be modified to have connection, listen, and response calls to make it more flexible
+
+* process_data.py is the last file I could see extracted as an API. Whereas right now, it's designed to process a specific file in a specific location, given a path or different file, it's resonable to assume that a different data file could be extracted, and new responses neural nets trained off of different data sets. It wouldn't require a lot of modification and would allow users to train their own AI provided they followed our format
+
 ## Implementation
 
 Bakerai uses advanced Natural Langugage Processing Techniques and Machine Learning Models to tailor responses specially to your needs.
