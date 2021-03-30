@@ -218,7 +218,7 @@ Potential allergies?
 We designed the model to predict the probability of each word in the user input. However, allergy is a strange pattern. Normally, converstation people conduct will have both the word allergy and the item they are allgergic to. For example, "I am allergic to peanut." Therefore, our bot struggle to predict any user input with allergy. We tried to account for this problem by adding alot of pattern for allergy tag. However, the outcome is not very proisming.
 
 ### Here is aexample of the problem I described:
-
+![](./image/Limitation.jpg)
 
 ### This is the official repository hosting the code which powers Bakerai. Feel free to take a look!
 
