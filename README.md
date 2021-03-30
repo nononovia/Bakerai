@@ -92,8 +92,8 @@ bakerai has the following file structure:
  ---unit-testing.py     
  ---client.py       
  ---clientGUI.py        
- ---sentiment_analysisby.py     
- ---sentiment_analysisby.ipynb      
+ ---sentiment_analysis.py     
+ ---sentiment_analysis.ipynb      
  ---intents.json        
     
 We have four files which all have one specific purpose as asked by the requirements.
