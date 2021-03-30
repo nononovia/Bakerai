@@ -13,6 +13,7 @@ class testBotMethods(unittest.TestCase):
         with open(f'{pathlib.Path(__file__).parent.absolute()}\\intents.json') as jsonFile:
             self.data = json.load(jsonFile)
         
+    # Test intents for accuracy
     def testIntent(self):
         print("Negative intentent testing:")
         totalSuccess = 0
@@ -30,6 +31,7 @@ class testBotMethods(unittest.TestCase):
             print("----No tests failed----")
         print(f'Passed {totalSuccess} tests, failed {totalFail} tests.\n')
 
+    # Test responses for accuracy
     def testResponses(self):
         print("Accurate Response testing:")
         # ensure we can get desired responses for very typical questions
@@ -54,6 +56,7 @@ class testBotMethods(unittest.TestCase):
             print("----No tests failed----")
         print(f'Passed {totalSuccess} tests, failed {totalFail} tests.\n')
 
+    # Testing default responses are accurate
     def testDefault(self): 
         # ensure we can get a default response when not discussing any subjects
         print("Default Response testing:")
@@ -71,6 +74,7 @@ class testBotMethods(unittest.TestCase):
             print("----No tests failed----")
         print(f'Passed {totalSuccess} tests, failed {totalFail} tests.\n')
 
+# We are running this file directly, and want to run the test
 if __name__ == '__main__':
     sampleTest = testBotMethods()
     print("\n----Test Results----")
