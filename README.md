@@ -7,7 +7,7 @@
 * ###    Sentiment Analysis
     I, Kanishka Verma, was tasked to implement Sentiment Analysis to improve conversation flow. 
     * Step 1: I found a dataset of amazon reviews. The dataset comprised of thousands of reviews. 
-    * Step 2: Using Pandas,I cleaned the data and then subset the data to only information I needed which was the reviewText and 
+    * Step 2: Using Pandas, I cleaned the data and then subset the data to only information I needed which was the reviewText and 
             the rating.
     * Step 3: I made a new column in the data and assigned each review a positive, negative rating depending on the rating  
             (num of stars on the review). 
