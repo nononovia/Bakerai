@@ -13,17 +13,22 @@
     * Step 4: Hooking up our Chat AI as an endpoint, and begin sending client inputs to the bot
     * Step 5: Final cleanup stage
 
-    ###
+    ## How did this feature improve the project?
     This feature was used to improve the interaction between users and the AI, to make talking with the AI more pleseant and more usable outside of strict command line environment. It's visually more pleasing, and opens the possiblity for further features in the future (though in the long run, this product would likely be implemented as a part of a server)
 
-    ###
+    ## Conversation snippet?
     Below is a conversation snippet:
-
+    image here
 
 * ###   Socket communication
-    Socket communication was another feature we chose to implement, done by Elias Pinno. It was unfortunately not included in the GUI, but still works as a proof of concept in client.py and server.py. You can still have conversations with the AI via a remote connection, just not via the GUI.
+    Socket communication was another feature we chose to implement, done by Elias Pinno. It was unfortunately not included in the GUI, but still works as a proof of concept in client.py and server.py. You can still have conversations with the AI via a remote connection, just not via the GUI. It also involved a lot of refactoring which made the code base a lot easier to call from remote files.
 
+    ## How did this feature improve the project?
+    This feature lays the ground work for the projects actual use case, remote conversation with the AI to learn more information about our hypothetical bakery. While in the future, this is more likely to be done via web connection, having even a client server backend set up to allow this is already promising.
 
+    ## Conversation snippet
+    Below is a conversation snippet:
+    image here
 
 
 * ###    Sentiment Analysis
