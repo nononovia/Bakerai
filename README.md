@@ -123,6 +123,8 @@ client.py contains the class template for the client designed to connect to the 
 
 ### `unit-testing.py`
 
+This is the file where we insert test variables and examine wether this bot is fully functional or not. This file consist of three methods: testIntent, testResponses(), testDefault(). TestIntent method tests an extremely negative response is truly negative. TestResponse method ensure we can get desired responses for very typical questions. TestDefault method ensure we can get a default response when not discussing any subjects.
+
 ### `clientGUI.py`
 
 Client GUI is the class template for a client object. While it's only 1 window and frame, it's still seperated into it's own class to attempt to follow a MVC structure. It uses the functions to locally find our BakerAi model responses, and display them to users, along with their own messages typed in the window. This allows the user to use the program outside of a command line context. It's likely the best place to run the program now, if you want a GUI experience with the best model.
