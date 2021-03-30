@@ -161,7 +161,7 @@ some libraries which were used:
 
 The software architecuture diagram is shown as follows:
 
-![](./image/SoftwareArchitecture.png)
+![Architecture](./image/SoftwareArchitecture.png)
 
 ## Data Flow Diagrams
 
