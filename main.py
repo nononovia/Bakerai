@@ -60,7 +60,7 @@ def output_depending_on_sentiment(sentiment,output):
         return negative
 
     else:
-        if numpy.amax(output) > 0.8:
+        if numpy.amax(output) > 0.85:
             output_i = numpy.argmax(output)
             cor_label = convoLabels[output_i]
 
@@ -70,13 +70,10 @@ def output_depending_on_sentiment(sentiment,output):
             return cor_responses
 
         else:
-            default = ["Sorry, I can't seem to understand... :(", "For detailed information, visit our website BakeSakura.com","Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."]
+            default = ["Sorry, I can't seem to understand... :(", "Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."]
             return default
 
         # extract the correct response from intents.json.
-
-
-       
 
 if __name__ == "__main__":
     start()
