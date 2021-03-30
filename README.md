@@ -162,6 +162,16 @@ The software architecuture diagram is shown as follows:
 
 ![](image/SoftwareArchitecture.png)
 
+## Data Flow Diagrams
+
+Here is the level 0 data flow diagram demonstrating the general flow of the data in our program.
+
+![](image/DFDL0.png)
+
+The Level 1 data flow diagram which entails more detailed information of the flow of the data is attached below as well.
+
+![](image/DFDlevel1.png)
+
 ## Requirements Definition
 
 The ChatBot Bakerai should be able to answer basic day to day questions about the bakery and should keep customers entertained while they are waiting for their purchases??.
