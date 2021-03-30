@@ -82,15 +82,15 @@ bakerai has the following file structure:
 
  ---process_data.py  
  ---NN.py  
- ---main.py
- ---server.py
- ---unit-testing.py
- ---client.py
- ---clientGUI.py
- ---sentiment_analysisby.py
- ---sentiment_analysisby.ipynb
- ---intents.json
-
+ ---main.py     
+ ---server.py   
+ ---unit-testing.py     
+ ---client.py       
+ ---clientGUI.py        
+ ---sentiment_analysisby.py     
+ ---sentiment_analysisby.ipynb      
+ ---intents.json        
+    
 We have four files which all have one specific purpose as asked by the requirements.
 
 ### `process_data.py`
