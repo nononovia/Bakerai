@@ -21,6 +21,8 @@ class testBotMethods(unittest.TestCase):
 
     def testResponses(self):
         # ensure we can get desired responses for very typical questions
+        totalSuccess = 0
+        totalFail = 0
         for intent in self.data["intents"]:
             possibleOutputs = []
             for responses in intent["responses"]:
@@ -30,7 +32,12 @@ class testBotMethods(unittest.TestCase):
                 sampleInput = pattern
                 modelResponse = m.getFinalOutput(self.loaded_clf, sampleInput)
                 #possibleOutputs = list of all outputs for that tag
-                self.assertTrue(modelResponse in possibleOutputs)
+                try:
+                    self.assertTrue(modelResponse in possibleOutputs)
+                    totalSuccess+=1
+                except: 
+                    print(f'AI response failed test for input: "{sampleInput}"')
+                    totalFail+= 1
 
     def testDefault(self): 
         # ensure we can get a default response when not discussing any subjects
@@ -40,6 +47,7 @@ class testBotMethods(unittest.TestCase):
 
 if __name__ == '__main__':
     sampleTest = testBotMethods()
-    sampleTest.testDefault()
-    sampleTest.testIntent()
-    sampleTest.testResponses()
+    sampleTest.main()
+    #sampleTest.testDefault()
+    #sampleTest.testIntent()
+    #sampleTest.testResponses()
