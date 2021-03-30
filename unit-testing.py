@@ -14,10 +14,18 @@ class testBotMethods(unittest.TestCase):
             self.data = json.load(jsonFile)
         
     def testIntent(self):
+        totalSuccess = 0
+        totalFail = 0
+        # ensure an extremely negative response is negative
         for test in NEGATIVE_TESTS:
             modelResponse = m.getFinalOutput(self.loaded_clf, test)
-            self.assertTrue(modelResponse in m.NEGATIVE_RESPONSES)
-        # ensure an extremely negative response is negative
+            try:
+                self.assertTrue(modelResponse in m.NEGATIVE_RESPONSES)
+                totalSuccess += 1
+            except:
+                print(f'AI response failed test for input: "{sampleInput}"')
+                totalFail+= 1
+        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.')
 
     def testResponses(self):
         # ensure we can get desired responses for very typical questions
@@ -38,16 +46,24 @@ class testBotMethods(unittest.TestCase):
                 except: 
                     print(f'AI response failed test for input: "{sampleInput}"')
                     totalFail+= 1
+        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.')
 
     def testDefault(self): 
         # ensure we can get a default response when not discussing any subjects
+        totalSuccess = 0
+        totalFail = 0
         for test in DEFAULT_TESTS:
             modelResponse = m.getFinalOutput(self.loaded_clf, test)
-            self.assertTrue(modelResponse in m.DEFAULT_RESPONSES)
+            try:
+                self.assertTrue(modelResponse in m.DEFAULT_RESPONSES)
+                totalSucess += 1
+            except:
+                print(f'AI response failed test for input: "{test}"')
+                    totalFail+= 1
+        print(f'Passed {totalSuccess} tests, failed {totalFail} tests.')
 
 if __name__ == '__main__':
     sampleTest = testBotMethods()
-    sampleTest.main()
-    #sampleTest.testDefault()
-    #sampleTest.testIntent()
-    #sampleTest.testResponses()
+    sampleTest.testDefault()
+    sampleTest.testIntent()
+    sampleTest.testResponses()
