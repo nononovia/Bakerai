@@ -70,7 +70,7 @@ def output_depending_on_sentiment(sentiment,output):
             return cor_responses
 
         else:
-            default = ["Sorry, I can't seem to understand... :(", "Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."]
+            default = ["What are you talking about? I don't get it", "Sorry, I can't seem to understand... :(", "Sorry, I am not smart enough to understand... visit our website BakeSakura.com for more information","uhhh... I am not going to pretend I understand","Sorry, can you rephrase your question please, I can't understand."]
             return default
 
         # extract the correct response from intents.json.
