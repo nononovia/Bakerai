@@ -4,18 +4,10 @@
 
 ## Features implemented in A3: 
 
-* ###   GUI
-    I, Elias Pinno, was tasked with implementing the GUI front end for our bot. this involved several key steps:
-    * Step 1: Selecting a GUI framework within the given constraints
-    * Step 2: Code framework reuse from a previous project i've worked on personally
-    * Step 3: The modifcation and adoption of that code to be a workable project for the GUI
-    * Step 4: Hooking up our Chat AI as an endpoint, and begin sending client inputs to the bot
-    * Step 5: Final cleanup stage
-
 * ###    Sentiment Analysis
     I, Kanishka Verma, was tasked to implement Sentiment Analysis to improve conversation flow. 
     * Step 1: I found a dataset of amazon reviews. The dataset comprised of thousands of reviews. 
-    * Step 2: Using Pandas, I cleaned the data and then subset the data to only information I needed which was the reviewText and 
+    * Step 2: Using Pandas,I cleaned the data and then subset the data to only information I needed which was the reviewText and 
             the rating.
     * Step 3: I made a new column in the data and assigned each review a positive, negative rating depending on the rating  
             (num of stars on the review). 
@@ -25,15 +17,23 @@
     * Step 6: I used several machine learning models and tested the accuracy of the model on testdata. I, then, picked the model with best accuracy and then saved that model. 
     * Step 7: We had to change the code in our main file main.py to now use this sentiment analysis model to make better predictions.
 
+* ###    spelling mistakes handler
+    Novia Fan and Rick Feng was asked to implement spell check for all user input for better prediction for model.
+    * Step 1: Tokenize all patterns into bag of words with porter stemmer
+    * Step 2: Send bag of words into the model as input training data
+    * Step 3: Create and train the Neural Network model so it recognizes spelling mistakes
+    * Step 4: Both NN.py and process_data,py has to adopt with porter stemmer(lancaster stemmer was used before) 
+    * Step 5: Any word that is inputed by user can be recogized as long as its still similar in spelling.
+
     ### How the model was used
 
 
 
     The model is use to classify user input as either positive and negative and if negative connotation is detected with the user input, then the model apologizes to the user. This was not possible with the previous iteration of the chat-bot.  
     ### Screenshot of the feature in action. 
-    ![img-1](https://github.com/Bakerai/Bakerai/blob/readme_info/image/sent1.PNG)
+    ![img-1](./image/sent1.png)
 
-    ![img-2](https://github.com/Bakerai/Bakerai/blob/readme_info/image/sent2.PNG)
+    ![img-2](./image/sent2.png)
 
 ## How to run
 
