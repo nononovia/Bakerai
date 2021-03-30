@@ -20,15 +20,15 @@ class testBotMethods(unittest.TestCase):
         # ensure an extremely negative response is negative
 
     def testResponses(self):
-        possibleOutputs = []
         # ensure we can get desired responses for very typical questions
         for intent in self.data["intents"]:
+            possibleOutputs = []
+            for responses in intent["responses"]:
+                    possibleOutputs.append(responses)
             for pattern in intent["patterns"]: 
                 #sampleInput = one of the input sentences for this tag
                 sampleInput = pattern
                 modelResponse = m.getFinalOutput(self.loaded_clf, sampleInput)
-                for responses in intent["responses"]:
-                    possibleOutputs.append(responses)
                 #possibleOutputs = list of all outputs for that tag
                 self.assertTrue(modelResponse in possibleOutputs)
 
