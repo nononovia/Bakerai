@@ -161,17 +161,17 @@ some libraries which were used:
 
 The software architecuture diagram is shown as follows:
 
-![](image/SoftwareArchitecture.png)
+![Architecture](./image/SoftwareArchitecture.png)
 
 ## Data Flow Diagrams
 
 Here is the level 0 data flow diagram demonstrating the general flow of the data in our program.
 
-![](image/DFDL0.png)
+![dfdl0](./image/DFDL0.png)
 
 The Level 1 data flow diagram which entails more detailed information of the flow of the data is attached below as well.
 
-![](image/DFDlevel1.png)
+![dfdl1](./image/DFDlevel1.png)
 
 ## Requirements Definition
 
