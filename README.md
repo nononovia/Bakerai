@@ -17,6 +17,14 @@
     * Step 6: I used several machine learning models and tested the accuracy of the model on testdata. I, then, picked the model with best accuracy and then saved that model. 
     * Step 7: We had to change the code in our main file main.py to now use this sentiment analysis model to make better predictions.
 
+    ### How the model was used
+
+    The model is use to classify user input as either positive and negative and if negative connotation is detected with the user input, then the model apologizes to the user. This was not possible with the previous iteration of the chat-bot.  
+    ### Screenshot of the feature in action. 
+    ![img-1](./image/sent1.PNG)
+
+    ![img-2](./image/sent2.PNG)
+    
 * ###    Spelling Mistakes Handler
     Novia Fan and Rick Feng was tasked to implement spell check for all user input for better prediction for model.
     * Step 1: Tokenize all patterns into bag of words with porter stemmer
@@ -24,16 +32,17 @@
     * Step 3: Create and train the Neural Network model so it recognizes spelling mistakes
     * Step 4: Both NN.py and process_data,py has to adopt with porter stemmer(lancaster stemmer was used before) 
     * Step 5: Any word that is inputed by user can be recogized as long as its still similar in spelling.
-
+    
     ### How the model was used
-
-
-
-    The model is use to classify user input as either positive and negative and if negative connotation is detected with the user input, then the model apologizes to the user. This was not possible with the previous iteration of the chat-bot.  
+    
+    The model is used to chekc spelling mistakes that user might make wjile inputing question for the bot to answer. If user input word that resemble a word within patterns. The model will predict with this information in mind.
+    
     ### Screenshot of the feature in action. 
-    ![img-1](./image/sent1.PNG)
-
-    ![img-2](./image/sent2.PNG)
+    ![cookie misspelled](./image/cooky.jpg)
+    
+    ![ice cream misspelled](./image/ice cream spelling error.jpg)
+    
+    ![location misspelled](./image/Shop location spelling check.jpg)
 
 ## How to run
 
