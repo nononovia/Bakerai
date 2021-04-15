@@ -51,7 +51,7 @@
         },
         {"tag": "location",
          "patterns": ["where is Sakura", "how can I get to Sakura", "What is the address for Sakura", "where are you", "where is the shop"],
-         "responses": ["We are at 221B Baker Street accross Lake Regional Park :)"],
+         "responses": ["We are at 221B Baker Street in London :)"],
          "context_set": ""
         },
         {"tag": "customize",
