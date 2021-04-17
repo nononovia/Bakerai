@@ -6,6 +6,8 @@ from process_data import  allWords, convoLabels, data
 from NN import convert_input_to_bow
 from NN import model
 import clientGUI as c
+import places
+import translate
 # these are the model and function for chatting
 # from process_data import ..... (you can load functions, varibles....)
 
@@ -25,21 +27,25 @@ def start():
         reading = input()
         if reading.strip().lower() == "quit":
             break
-
         # print a response.
-        print(f'bot: {getFinalOutput(loaded_clf,reading)}')
+        # print(f'bot: {getFinalOutput(loaded_clf,reading)+"English"}')
         print(" ")
 
-def getFinalOutput(loaded_clf, reading):
-    output = model.predict([convert_input_to_bow(reading, allWords )])
+def getFinalOutput(loaded_clf, reading,detected_language):
+    output = model.predict([convert_input_to_bow(reading, allWords)])
     #get the prediction with max probability.
 
     #get the sentiment of user input
     sent_out = loaded_clf.predict_proba(input_to_bow_sentiment(reading))
 
     #Random response
-    return random.choice(output_depending_on_sentiment(sent_out,output))
+    response = random.choice(output_depending_on_sentiment(sent_out,output))
 
+    #Translate the response
+    if (detected_language == 'en'):
+        return response
+    else:
+        return translate.translate_to_other_language(response, detected_language)
 
 
 def load_sentiment_analysis(): 
@@ -48,7 +54,7 @@ def load_sentiment_analysis():
 
     with open('./sentiment_models/vectorizer.pkl', 'rb') as f:
         vectorizer = pickle.load(f)
-    return [loaded_clf,vectorizer]
+    return [loaded_clf, vectorizer]
 
 def input_to_bow_sentiment(words): 
     vectorizer = load_sentiment_analysis()[1]
@@ -64,16 +70,19 @@ def output_depending_on_sentiment(sentiment,output):
         if numpy.amax(output) > 0.85:
             output_i = numpy.argmax(output)
             cor_label = convoLabels[output_i]
-
+            # extract the correct response from intents.json.
             for label in data['intents']:
                 if label['tag'] == cor_label:
                     cor_responses = label['responses']
+                    # if the the location tag is chosen, display google map in browser
+                    if cor_label == 'location':
+                        places.open_map()
             return cor_responses
 
         else:
             return DEFAULT_RESPONSES
 
-        # extract the correct response from intents.json.
+
 
 if __name__ == "__main__":
     #start()

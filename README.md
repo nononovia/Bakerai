@@ -2,6 +2,50 @@
 
 ## Bakerai is an online chatbot for a imaginary bakery - SAKURA. Bakerai acts as your online assistant to provide customer information they need about SAKURA without leaving the comfort of their home.
 
+## APIs incorporated individually:
+
+* ### Google Places API
+    #### Here is how I incorporated the API into the chatbot:
+    * Step 1: Obtain an API key for the Google Places API
+    * Step 2: In places.py use the Google Places API to obtain the url (and/or other details about the place if needed in the future) providing the address of the bakery.
+    * Step 3: Use the python3 webbrowser module, open up the link to the Google Map page.
+    * Step 4: Step 2 and 3 is incorporated into a function called open_maps() in places.py for good software engineering practices.
+    * Step 5: In main.py, when the corresponding tags are determined based on the input, if the tag chosen is regarding location, call the open.map() function made in Step 4 to open up the Google Map page in the user's browser.
+    
+    ####How did this feature improve the project?
+    
+    When the user asks about the location of the store, the chatbot will now automatically open up the location of our store in Google Maps automatically. Currently, only one location "221B Baker Street, London" is being shown on Google Maps, however more location can be easily added to the program if SAKURA happens to open up more stores. This feature helps customers to see where we sit on the map immediately, and provide them with convinence of using Google Maps other feature (such as direction) to get to the bakery.
+
+    #### Conversation Snippets
+   
+    ![](./image/openMap.jpg)
+  
+    This feature is better representated in a video format, therefore please check the video for how it works.
+* ### Cloud Translation API
+  
+    ####Here is how I incorporated the API into the chatbot:
+    * Step 1: Obtain the API credential json file from Google Cloud
+    * Step 2: Utilize the API to implement 3 functions in that will be used at different parts of the program.
+        
+        * The 3 functions that are implemented in translate.py are:
+            * translate_to_English()
+            * detect_language()
+            * translate_to_other_language()
+    * Step 3: In clientGUI.py right after the user input is taken in, use detect_language() to check whether the input is in English or not. If it is not in English, use translate_to_English to convert it into English immediately, and save the detected lanuage in a variable as it will need to be used later.
+    * Step 4: The previously implemented code of obtaining corresponding output is then run on the translated input.
+    * Step 5: When clientGUI calls getFinalOutput() to obtains the response message from main.py, the detected language is passed in as a parameter.  
+    * Step 5: In the getFinalOutput() function, if the detected language is not English, the message our chatbot came up is then translated into the detected language, so the entire conversation would be in the language that user speaks.  
+    
+    ####How did this feature improve the project?
+     
+    When the user talks to the chatbot in a different language, the chatbot replies in the same language as it has been spoken to. This allows our chatbot to talk to customers all over the world who speaks different languages, significantly expanding the size of our potential customers.
+
+    #### Conversation Snippets
+    
+    ![](./image/translate.jpg)
+
+    As you can see, the bot responds in French when spoken to in French, responds in Chinese when spoken to in Chinese.
+     
 ## Features implemented in A3:
 
 
@@ -103,7 +147,9 @@ bakerai has the following file structure:
  ---clientGUI.py        
  ---sentiment_analysis.py     
  ---sentiment_analysis.ipynb      
- ---intents.json        
+ ---intents.json   
+ ---places.py  
+ ---translate.py
     
 We have four files which all have one specific purpose as asked by the requirements.
 
@@ -142,6 +188,12 @@ Client GUI is the class template for a client object. While it's only 1 window a
 
 This file handles the attitude of the user input if the sentiment analysis model recognize it. The training data is cleaned using Pandas and then subset the data to only information is needed which was the reviewText and the rating. The model is trained, and it assignes each review a positive, negative rating depending on the rating. When user input is very likly to be negative, the bot will apologizes to the user.
 
+### `places.py`
+
+This file implements the Google Places API and gets the link and opens the Google Map page of the address "221B Baker Street London".
+
+### `translate.py`
+This file implements the Google Cloud Translation API. It has 3 functions: translate_to_English(), detect_language() and translate_to_other_language(). The API supports a wide range of language, but when making the API call for translating into certain language, the language code parameter must be a " ISO-639-1" idenfitier. Such as 'en' for English and 'fr' for French.   
 ## Functions
 
 - Customer service and support.
