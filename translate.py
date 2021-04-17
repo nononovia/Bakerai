@@ -5,8 +5,6 @@ import os
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'sharp-harbor-306003-4a27401f8846.json'
 client = translate.Client()
 
-print(client.detect_language("Bonjour"))
-
 
 def translate_to_English(text):
     result = client.translate(text, target_language='en')

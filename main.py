@@ -70,10 +70,11 @@ def output_depending_on_sentiment(sentiment,output):
         if numpy.amax(output) > 0.85:
             output_i = numpy.argmax(output)
             cor_label = convoLabels[output_i]
-
+            # extract the correct response from intents.json.
             for label in data['intents']:
                 if label['tag'] == cor_label:
                     cor_responses = label['responses']
+                    # if the the location tag is chosen, display google map in browser
                     if cor_label == 'location':
                         places.open_map()
             return cor_responses
@@ -81,7 +82,7 @@ def output_depending_on_sentiment(sentiment,output):
         else:
             return DEFAULT_RESPONSES
 
-        # extract the correct response from intents.json.
+
 
 if __name__ == "__main__":
     #start()
